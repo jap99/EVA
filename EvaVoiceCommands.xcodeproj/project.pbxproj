@@ -25,6 +25,8 @@
 		9F6984B420198CA800215753 /* EvaVoiceCommands-Intents.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9F69849B20198CA800215753 /* EvaVoiceCommands-Intents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9FE34BC1201E48C500B8B1BA /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE34BC2201E48C500B8B1BA /* Alamofire.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		9FE34BC8201E4AB500B8B1BA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE34BC6201E4AB500B8B1BA /* SWRevealViewController.m */; };
+		9FE34BCD201E4FA500B8B1BA /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE34BCC201E4FA500B8B1BA /* ChatVC.swift */; };
+		9FE34BCF201E4FB000B8B1BA /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE34BCE201E4FB000B8B1BA /* ChannelVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		9FE34BC5201E4AB400B8B1BA /* EvaVoiceCommands-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EvaVoiceCommands-Bridging-Header.h"; sourceTree = "<group>"; };
 		9FE34BC6201E4AB500B8B1BA /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		9FE34BC7201E4AB500B8B1BA /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		9FE34BCC201E4FA500B8B1BA /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		9FE34BCE201E4FB000B8B1BA /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		C751353B34D2A498E7ED0C82 /* Pods_EvaVoiceCommands_Intents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EvaVoiceCommands_Intents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0023468221854A938944984 /* Pods-EvaVoiceCommands-Intents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvaVoiceCommands-Intents.release.xcconfig"; path = "Pods/Target Support Files/Pods-EvaVoiceCommands-Intents/Pods-EvaVoiceCommands-Intents.release.xcconfig"; sourceTree = "<group>"; };
 		D3ECE76D922F5CF9DC08683D /* Pods-EvaVoiceCommands.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvaVoiceCommands.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EvaVoiceCommands/Pods-EvaVoiceCommands.debug.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +168,9 @@
 		9F69848320198B6D00215753 /* EvaVoiceCommands */ = {
 			isa = PBXGroup;
 			children = (
+				9FE34BCB201E4F8A00B8B1BA /* Controller */,
+				9FE34BCA201E4F8600B8B1BA /* View */,
+				9FE34BC9201E4F7A00B8B1BA /* Model */,
 				9F69849620198C4A00215753 /* EvaVoiceCommands.entitlements */,
 				9F69848420198B6D00215753 /* AppDelegate.swift */,
 				9F69848620198B6D00215753 /* ViewController.swift */,
@@ -210,6 +217,30 @@
 				9F6984AE20198CA800215753 /* Info.plist */,
 			);
 			path = "EvaVoiceCommands-IntentsUI";
+			sourceTree = "<group>";
+		};
+		9FE34BC9201E4F7A00B8B1BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9FE34BCA201E4F8600B8B1BA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9FE34BCB201E4F8A00B8B1BA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9FE34BCC201E4FA500B8B1BA /* ChatVC.swift */,
+				9FE34BCE201E4FB000B8B1BA /* ChannelVC.swift */,
+			);
+			name = Controller;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -532,9 +563,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FE34BCD201E4FA500B8B1BA /* ChatVC.swift in Sources */,
 				9F69848720198B6D00215753 /* ViewController.swift in Sources */,
 				9F69848520198B6D00215753 /* AppDelegate.swift in Sources */,
 				9FE34BC8201E4AB500B8B1BA /* SWRevealViewController.m in Sources */,
+				9FE34BCF201E4FB000B8B1BA /* ChannelVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

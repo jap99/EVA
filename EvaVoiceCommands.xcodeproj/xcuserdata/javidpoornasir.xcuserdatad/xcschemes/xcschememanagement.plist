@@ -7,17 +7,17 @@
 		<key>EvaVoiceCommands-Intents.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>23</integer>
+			<integer>1</integer>
 		</dict>
 		<key>EvaVoiceCommands-IntentsUI.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>24</integer>
+			<integer>2</integer>
 		</dict>
 		<key>EvaVoiceCommands.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>22</integer>
+			<integer>0</integer>
 		</dict>
 	</dict>
 </dict>

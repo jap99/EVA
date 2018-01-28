@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sWb-ix-9bL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="32l-8B-Wwv">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--Item 2-->
         <scene sceneID="HKv-YX-9bL">
             <objects>
-                <viewController id="tTV-3a-kbc" sceneMemberID="viewController">
+                <viewController id="tTV-3a-kbc" customClass="ChannelVC" customModule="EvaVoiceCommands" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1js-7n-8Vm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X9V-Q0-5rd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="885" y="-773"/>
+            <point key="canvasLocation" x="2794" y="-703"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="D3b-Fj-g7D">
@@ -35,10 +35,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lvK-yd-b99">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xnC-4u-CkB">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -66,25 +66,6 @@
             </objects>
             <point key="canvasLocation" x="885" y="-1439"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="3x2-bK-9MG">
-            <objects>
-                <tabBarController id="c4m-3T-cA6" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IGO-bZ-SpT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="mcw-wY-yju" kind="relationship" relationship="viewControllers" id="c4U-g1-DzO"/>
-                        <segue destination="tTV-3a-kbc" kind="relationship" relationship="viewControllers" id="zTj-TG-yAM"/>
-                        <segue destination="sAa-ym-SwJ" kind="relationship" relationship="viewControllers" id="bvv-So-g73"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kTP-UC-UAv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-72" y="-1108"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -94,16 +75,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="QtV-db-icM">
-                                <rect key="frame" x="0.0" y="319.5" width="0.0" height="92"/>
+                                <rect key="frame" x="20" y="-20122" width="335" height="40975"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6t-6v-jWA">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="40883"/>
                                         <string key="text">In order to work fully, we need to read your photo library, record your voice, and transcribe what you said. When you click to button below you will be asked to grant those perissions, but you can change your mind later.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoP-Zk-k21">
-                                        <rect key="frame" x="0.0" y="50" width="0.0" height="42"/>
+                                        <rect key="frame" x="0.0" y="40933" width="335" height="42"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Continue"/>
                                     </button>
@@ -133,7 +115,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eH9-jw-doJ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -151,6 +133,77 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P1H-gg-gdp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1768.8" y="33.733133433283363"/>
+        </scene>
+        <!--Reveal View Controller-->
+        <scene sceneID="mcx-dn-yCF">
+            <objects>
+                <viewController id="32l-8B-Wwv" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QLh-Yo-VoZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="GYc-mw-qYX"/>
+                    </view>
+                    <connections>
+                        <segue destination="tTV-3a-kbc" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="zt3-WB-o3R"/>
+                        <segue destination="fKk-ep-a2P" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="ElG-X1-m9p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ygz-cU-B1j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2726" y="46"/>
+        </scene>
+        <!--ChatVC-->
+        <scene sceneID="IRp-Ka-Diw">
+            <objects>
+                <viewController id="fKk-ep-a2P" customClass="ChatVC" customModule="EvaVoiceCommands" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lbV-sd-48k">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vyW-ZB-pNt">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDh-iU-mJt">
+                                        <rect key="frame" x="12" y="47" width="24" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="ZeS-g6-v1I"/>
+                                            <constraint firstAttribute="height" constant="18" id="sGa-Ec-ARV"/>
+                                        </constraints>
+                                        <state key="normal" image="smackBurger"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eva" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yj8-hQ-y5j">
+                                        <rect key="frame" x="173.5" y="46" width="28" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.99937439939999995" green="0.99360014799999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.29019607843137252" green="0.30196078431372547" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Yj8-hQ-y5j" firstAttribute="centerX" secondItem="vyW-ZB-pNt" secondAttribute="centerX" id="FBb-ss-Ubt"/>
+                                    <constraint firstAttribute="height" constant="77" id="Fn2-8e-8Cs"/>
+                                    <constraint firstItem="Yj8-hQ-y5j" firstAttribute="centerY" secondItem="vDh-iU-mJt" secondAttribute="centerY" id="KCc-E2-cxA"/>
+                                    <constraint firstAttribute="bottom" secondItem="vDh-iU-mJt" secondAttribute="bottom" constant="12" id="PZ9-xY-XVb"/>
+                                    <constraint firstItem="vDh-iU-mJt" firstAttribute="leading" secondItem="vyW-ZB-pNt" secondAttribute="leading" constant="12" id="nYq-xs-EjP"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vyW-ZB-pNt" firstAttribute="top" secondItem="lbV-sd-48k" secondAttribute="top" id="7xi-Tk-yLu"/>
+                            <constraint firstItem="vyW-ZB-pNt" firstAttribute="leading" secondItem="umz-f4-g2l" secondAttribute="leading" id="90c-Kb-cFl"/>
+                            <constraint firstItem="vyW-ZB-pNt" firstAttribute="trailing" secondItem="umz-f4-g2l" secondAttribute="trailing" id="ZNb-vp-dyW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="umz-f4-g2l"/>
+                    </view>
+                    <connections>
+                        <outlet property="menuBtn" destination="vDh-iU-mJt" id="1Yg-NP-XM3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NJR-N2-q73" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3789.5999999999999" y="55.322338830584712"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="x3R-6Z-SnY">
@@ -171,4 +224,7 @@
             <point key="canvasLocation" x="-232" y="39.580209895052477"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="smackBurger" width="40" height="40"/>
+    </resources>
 </document>
