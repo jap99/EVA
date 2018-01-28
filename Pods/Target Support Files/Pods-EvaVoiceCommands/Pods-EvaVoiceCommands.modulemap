@@ -1,0 +1,6 @@
+framework module Pods_EvaVoiceCommands {
+  umbrella header "Pods-EvaVoiceCommands-umbrella.h"
+
+  export *
+  module * { export * }
+}
