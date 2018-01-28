@@ -41,5 +41,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSSiriUsageDescription</key>
+	<string>We use this to enable voice recognition with Siri</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>We use this to enable your microphone</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>We use this to enable voice recognition within Eva</string>
 </dict>
 </plist>
