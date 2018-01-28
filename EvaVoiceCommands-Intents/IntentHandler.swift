@@ -7,6 +7,13 @@
 //
 
 import Intents
+import UIKit
+
+
+// TO TAKE THINGS FURTHER, START AT ADDING ANOTHER RESOLVE METHOD SUCH AS FOR FINDING OUT HOW MANY PEOPLE IN THE RIDE
+// OR A CONFIRM METHOD - HAPPENS AFTER RESOLUTION AND BEFORE HANDLING - SAYS "WE'VE MANAGED TO RESOLVE YOUR RIDE REQUEST; IS THIS OK?"
+
+// APPLE EXPECTS TO HANDLE ONLY 1 RIDE AT A TIME; THERE'S AN ID OF ALL THE INTENTS THAT GET PASSED INTO OUR METHODS BUT WHEN THE HANDLE GETRIDESTATUS() IS CALLED THAT ID WILL BE DIFFERENT SO THERE'S NO WAY TO TIE THE GETRIDESTATUS INTENT BACK TO THE CREATERIDE INTENT; THAT IS, WHEN IOS ASKS YOU WHERE IS THE RIDE THERE'S NO WAY TO KNOW WHICH RIDE IT'S TALKING ABOUT ----- SOLUTION IS TO STORE THE RIDE'S RIDE IDENTIFIER WITH USERDEFAULTS THEN PULL IT BACK OUT AND SEND TO SERVER WHEN UPDATING RIDE STATUS
 
 class IntentHandler: INExtension, INRidesharingDomainHandling {
     
@@ -20,7 +27,7 @@ class IntentHandler: INExtension, INRidesharingDomainHandling {
     
 // MARK: REQUEST RIDE
     func handle(intent: INRequestRideIntent, completion: @escaping (INRequestRideIntentResponse) -> Void) {
-        // Handles which ride was selected
+        // Called when user has selected a ride using Siri or Map & wants to confirm the booking
         
         // We can't directly access which type of ride it was
         
@@ -33,50 +40,70 @@ class IntentHandler: INExtension, INRidesharingDomainHandling {
         
         
         // FIND OUT WHERE DRIVER IS AND HOW MUCH LONGER
+        let result = INRequestRideIntentResponse(code: .success, userActivity: nil)
+        
+        // CREATE RIDE STATUS
         let status = INRideStatus()
         
-        // Configure the ride request internally and get its ID
-        status.rideIdentifier = self.createNewRideRequest(withStartingLocation: intent.pickupLocation!, endingLocation: intent.dropOffLocation!, partySize: intent.partySize!, paymentMethod: intent.paymentMethod!)
+        status.rideIdentifier = "abc123" // if it chances then Maps assumes ride was completed successfully or cancelled & updates UI
+        status.pickupLocation = intent.pickupLocation // our resolve methods ensure we have a value
+        status.dropOffLocation = intent.dropOffLocation // our resolve methods ensure we have a value\
+        status.phase = INRidePhase.confirmed // set to receive, confirmed, ongoing, completed, approaching, or pickup - all depending on the state of the ride
+        status.estimatedPickupDate = Date(timeIntervalSinceNow: 900) // Check again from your server
         
-        // Configure the pickup and dropoff information.
-        status.estimatedPickupDate = self.estimatedPickupDateForRideRequest(identifier: status.rideIdentifier!)
-        status.pickupLocation = intent.pickupLocation
-        status.dropOffLocation = intent.dropOffLocation
+        // CREATE VEHICLE
+        let vehicle = INRideVehicle() // Describes location of the car and where it is currently - 2 complications: (1) INRideStatus uses copy symantics behind the scenes which means when you read or write the vehicle property you'll actually be writing to a copy - must therefore configure it full before we assign it to the ride status, (2) when you create the confirmed ride you can assign a picture to the car to present it inside maps with INImage but there's an issue with the initializer --- supposed to turn with the location the map is moving
         
-        // Retrieve the ride details that the user needs.
-        status.vehicle = self.vehicleForRideRequest(identifier: status.rideIdentifier!)
-        status.driver = self.driverForRideRequest(identifier: status.rideIdentifier!)
+        // workaround: load car image into UIImage, convert it into PNG data, then create an INImage out of that
+        let image = UIImage(named: "car")!
+        let data = UIImagePNGRepresentation(image)!
+        vehicle.mapAnnotationImage = INImage(imageData: data) // PLACE VEHICLE ON MAP & SEND IT BACK
+        vehicle.location = intent.dropOffLocation!.location
+
+        result.rideStatus = status
         
-        // Configure the vehicle type and pricing
-        status.rideOption = self.rideOptionForRideRequest(identifier: status.rideIdentifier!)
+    
         
-        // Commit the request and get the current status
-        status.phase = self.completeBookingForRideRequest(identifier: status.rideIdentifier!)
         
-        var responseCode: INRequestRideIntentResponseCode
-        if status.phase == .received {
-            responseCode = .inProgress
-        } else if status.phase == .confirmed {
-            responseCode = .success
-        } else {
-            responseCode = .failure // There are many others we should handle also
-        }
-        
-        let response = INRequestRideIntentResponse.init(code: responseCode, userActivity: nil)
-        response.rideStatus = status
-        
-        let userDefaults: UserDefaults = UserDefaults.init(suiteName: "group.com.cleandev.SiriKit-EvaRideshare")!
-        userDefaults.set(response.rideStatus?.description, forKey: "SelectedRide") // We'll use this key to fetch it in AppDelegate
-        
-        completion(response)
+//        // Configure the ride request internally and get its ID
+//        status.rideIdentifier = self.createNewRideRequest(withStartingLocation: intent.pickupLocation!, endingLocation: intent.dropOffLocation!, partySize: intent.partySize!, paymentMethod: intent.paymentMethod!)
+//
+//        // Configure the pickup and dropoff information.
+//        status.estimatedPickupDate = self.estimatedPickupDateForRideRequest(identifier: status.rideIdentifier!)
+//        status.pickupLocation = intent.pickupLocation
+//        status.dropOffLocation = intent.dropOffLocation
+//
+//        // Retrieve the ride details that the user needs.
+//        status.vehicle = self.vehicleForRideRequest(identifier: status.rideIdentifier!)
+//        status.driver = self.driverForRideRequest(identifier: status.rideIdentifier!)
+//
+//        // Configure the vehicle type and pricing
+//        status.rideOption = self.rideOptionForRideRequest(identifier: status.rideIdentifier!)
+//
+//        // Commit the request and get the current status
+//        status.phase = self.completeBookingForRideRequest(identifier: status.rideIdentifier!)
+//
+//        var responseCode: INRequestRideIntentResponseCode
+//        if status.phase == .received {
+//            responseCode = .inProgress
+//        } else if status.phase == .confirmed {
+//            responseCode = .success
+//        } else {
+//            responseCode = .failure // There are many others we should handle also
+//        }
+//
+//
+//        let response = INRequestRideIntentResponse.init(code: responseCode, userActivity: nil)
+//        response.rideStatus = status
+//
+//        let userDefaults: UserDefaults = UserDefaults.init(suiteName: "group.com.cleandev.SiriKit-EvaRideshare")!
+//        userDefaults.set(response.rideStatus?.description, forKey: "SelectedRide") // We'll use this key to fetch it in AppDelegate
+
+        //completion(response)
+        completion(result)
         
         // Handler should confirm the request and create an INRequestRideIntentResponse object about whether the ride was booked successfully
     
-        
-    }
-    
-    func confirm(intent: INRequestRideIntent, completion: @escaping (INRequestRideIntentResponse) -> Void) {
-        
         
     }
     
@@ -85,12 +112,53 @@ class IntentHandler: INExtension, INRidesharingDomainHandling {
         
         // Talk to server and get intent to find out location of ride
         
+        // Returns success if we already have valid pickup location or request a valid one if nothing was provided
+        
+        let result: INPlacemarkResolutionResult
+        
+        if let requestedLocation = intent.pickupLocation {
+            
+            // success - valid pickup location found
+            result = INPlacemarkResolutionResult.success(with: requestedLocation)
+        } else {
+            
+            // failure - valid pickup location not found
+            result = INPlacemarkResolutionResult.needsValue()
+        }
+        
+        // passes data back to the system using the completion handler - means we can send a request off to the server to validate we can handle the requested location before calling that completion  -  if there isn't already a pickup location then the status code we send back is the .needsValue() which will trigger Siri to ask the user to provide a location - ie. "Where do you want to be picked up from?" but might also include follow up questions if the precise location wasn't precise enough
+        
+        
+        completion(result)
+        
     }
     
     func resolveDropOffLocation(for intent: INListRideOptionsIntent, with completion: @escaping (INPlacemarkResolutionResult) -> Void) {
         // Finds out if we have enough info to dropoff to this location
         
         // Talk to server and get intent to find out location of ride
+        
+        let result: INPlacemarkResolutionResult
+        
+        if let requestedLocation = intent.dropOffLocation {
+            
+            // success - valid dropoff location found
+            result = INPlacemarkResolutionResult.success(with: requestedLocation)
+        } else {
+            
+            // failure - valid dropoff location not found
+            result = INPlacemarkResolutionResult.needsValue()
+        }
+        
+        
+        completion(result)
+    
+        
+    }
+    
+    
+    func confirm(intent: INRequestRideIntent, completion: @escaping (INRequestRideIntentResponse) -> Void) {
+        
         
     }
 
@@ -123,19 +191,19 @@ class IntentHandler: INExtension, INRidesharingDomainHandling {
     
 // MARK: GET RIDE STATUS
 
-    var observer: INGetRideStatusIntentResponseObserver
-    var timer: Timer
+    var observer: INGetRideStatusIntentResponseObserver?
+    var timer: Timer?
     
     func handle(intent: INGetRideStatusIntent, completion: @escaping (INGetRideStatusIntentResponse) -> Void) {
         // Method gets called when user asks where their ride is
         
         // Get current location of ride then send back but we can't do that here
         
-        if let result = INGetRideStatusIntentResponse(code: .success, userActivity: nil) {
+        let result = INGetRideStatusIntentResponse(code: .success, userActivity: nil)
             // code could also be in progress, failure, failure requring app launch, etc
             // user activity is set to app if user requests to launch the app to get more info then we might send the booking ID in there so the app can pickup where the extension left off
         completion(result)
-        }
+        
         
     }
     
@@ -177,10 +245,15 @@ class IntentHandler: INExtension, INRidesharingDomainHandling {
 // MARK: CANCEL RIDE
     func handle(cancelRide intent: INCancelRideIntent, completion: @escaping (INCancelRideIntentResponse) -> Void) {
         
+        let result = INCancelRideIntentResponse(code: .success, userActivity: nil)
+        completion(result)
     }
     
 // MARK: SEND RIDE FEEDBACK
     func handle(sendRideFeedback sendRideFeedbackintent: INSendRideFeedbackIntent, completion: @escaping (INSendRideFeedbackIntentResponse) -> Void) {
+        
+        let response = INSendRideFeedbackIntentResponse(code: .success, userActivity: nil)
+        completion(response)
         
     }
 
@@ -201,7 +274,7 @@ class IntentHandler: INExtension, INRidesharingDomainHandling {
 
 
 
-/*
+
 // As an example, this class is set up to handle Message intents.
 // You will want to replace this or add other intents as appropriate.
 // The intents you wish to handle must be declared in the extension's Info.plist.
@@ -211,14 +284,9 @@ class IntentHandler: INExtension, INRidesharingDomainHandling {
 // "<myApp> John saying hello"
 // "Search for messages in <myApp>"
 
-class IntentHandler: INExtension, INSendMessageIntentHandling, INSearchForMessagesIntentHandling, INSetMessageAttributeIntentHandling {
+extension IntentHandler: INSendMessageIntentHandling, INSearchForMessagesIntentHandling, INSetMessageAttributeIntentHandling {
     
-    override func handler(for intent: INIntent) -> Any {
-        // This is the default implementation.  If you want different objects to handle different intents,
-        // you can override this and return the handler you want for that particular intent.
-        
-        return self
-    }
+    
     
     // MARK: - INSendMessageIntentHandling
     
@@ -316,5 +384,5 @@ class IntentHandler: INExtension, INSendMessageIntentHandling, INSearchForMessag
     }
 }
 
-*/
+
 

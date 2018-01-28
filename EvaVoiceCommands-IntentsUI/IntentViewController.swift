@@ -8,9 +8,9 @@
 
 import IntentsUI
 
-class IntentViewController: UIViewController {
-    
-}
+//class IntentViewController: UIViewController {
+//
+//}
 
 
 

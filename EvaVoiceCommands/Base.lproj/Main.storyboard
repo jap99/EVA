@@ -94,17 +94,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="QtV-db-icM">
-                                <rect key="frame" x="20" y="-20122" width="335" height="40975"/>
+                                <rect key="frame" x="0.0" y="319.5" width="0.0" height="92"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6t-6v-jWA">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="40883"/>
                                         <string key="text">In order to work fully, we need to read your photo library, record your voice, and transcribe what you said. When you click to button below you will be asked to grant those perissions, but you can change your mind later.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoP-Zk-k21">
-                                        <rect key="frame" x="0.0" y="40933" width="335" height="42"/>
+                                        <rect key="frame" x="0.0" y="50" width="0.0" height="42"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Continue"/>
                                     </button>

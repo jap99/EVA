@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F00F84E201E0FF500C2F3DD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F00F84D201E0FF500C2F3DD /* MapKit.framework */; };
+		9F00F84F201E100E00C2F3DD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F00F84D201E0FF500C2F3DD /* MapKit.framework */; };
 		9F69848520198B6D00215753 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F69848420198B6D00215753 /* AppDelegate.swift */; };
 		9F69848720198B6D00215753 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F69848620198B6D00215753 /* ViewController.swift */; };
 		9F69848A20198B6D00215753 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F69848820198B6D00215753 /* Main.storyboard */; };
@@ -53,6 +55,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9F00F84D201E0FF500C2F3DD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9F69848120198B6D00215753 /* EvaVoiceCommands.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EvaVoiceCommands.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F69848420198B6D00215753 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F69848620198B6D00215753 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F00F84E201E0FF500C2F3DD /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F00F84F201E100E00C2F3DD /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +152,7 @@
 		9F6984A520198CA800215753 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9F00F84D201E0FF500C2F3DD /* MapKit.framework */,
 				9F6984A620198CA800215753 /* IntentsUI.framework */,
 			);
 			name = Frameworks;
@@ -237,6 +243,9 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
 							com.apple.Siri = {
 								enabled = 1;
 							};
@@ -244,9 +253,12 @@
 					};
 					9F69849A20198CA800215753 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
 						};
@@ -560,12 +572,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "EvaVoiceCommands-Intents/EvaVoiceCommands-Intents.entitlements";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = VWFZU9229C;
 				INFOPLIST_FILE = "EvaVoiceCommands-Intents/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cleandev.EvaVoiceCommands.EvaVoiceCommands-Intents";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d90a6148-2387-49b1-a4bf-f61dfb1a5874";
+				PROVISIONING_PROFILE_SPECIFIER = "EvaVoiceCommandsIntents2-DEV";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -576,12 +590,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "EvaVoiceCommands-Intents/EvaVoiceCommands-Intents.entitlements";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = VWFZU9229C;
 				INFOPLIST_FILE = "EvaVoiceCommands-Intents/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cleandev.EvaVoiceCommands.EvaVoiceCommands-Intents";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d90a6148-2387-49b1-a4bf-f61dfb1a5874";
+				PROVISIONING_PROFILE_SPECIFIER = "EvaVoiceCommandsIntents2-DEV";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
