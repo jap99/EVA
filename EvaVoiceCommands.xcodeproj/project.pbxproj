@@ -27,6 +27,7 @@
 		9FE34BC8201E4AB500B8B1BA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE34BC6201E4AB500B8B1BA /* SWRevealViewController.m */; };
 		9FE34BCD201E4FA500B8B1BA /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE34BCC201E4FA500B8B1BA /* ChatVC.swift */; };
 		9FE34BCF201E4FB000B8B1BA /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE34BCE201E4FB000B8B1BA /* ChannelVC.swift */; };
+		9FE34BD1201E529200B8B1BA /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE34BD0201E529200B8B1BA /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		9FE34BC7201E4AB500B8B1BA /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		9FE34BCC201E4FA500B8B1BA /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		9FE34BCE201E4FB000B8B1BA /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
+		9FE34BD0201E529200B8B1BA /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		C751353B34D2A498E7ED0C82 /* Pods_EvaVoiceCommands_Intents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EvaVoiceCommands_Intents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0023468221854A938944984 /* Pods-EvaVoiceCommands-Intents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvaVoiceCommands-Intents.release.xcconfig"; path = "Pods/Target Support Files/Pods-EvaVoiceCommands-Intents/Pods-EvaVoiceCommands-Intents.release.xcconfig"; sourceTree = "<group>"; };
 		D3ECE76D922F5CF9DC08683D /* Pods-EvaVoiceCommands.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvaVoiceCommands.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EvaVoiceCommands/Pods-EvaVoiceCommands.debug.xcconfig"; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				9FE34BC7201E4AB500B8B1BA /* SWRevealViewController.h */,
 				9FE34BC6201E4AB500B8B1BA /* SWRevealViewController.m */,
 				9FE34BC5201E4AB400B8B1BA /* EvaVoiceCommands-Bridging-Header.h */,
+				9FE34BD0201E529200B8B1BA /* GradientView.swift */,
 			);
 			path = EvaVoiceCommands;
 			sourceTree = "<group>";
@@ -565,6 +568,7 @@
 			files = (
 				9FE34BCD201E4FA500B8B1BA /* ChatVC.swift in Sources */,
 				9F69848720198B6D00215753 /* ViewController.swift in Sources */,
+				9FE34BD1201E529200B8B1BA /* GradientView.swift in Sources */,
 				9F69848520198B6D00215753 /* AppDelegate.swift in Sources */,
 				9FE34BC8201E4AB500B8B1BA /* SWRevealViewController.m in Sources */,
 				9FE34BCF201E4FB000B8B1BA /* ChannelVC.swift in Sources */,
