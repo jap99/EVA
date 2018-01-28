@@ -108,15 +108,13 @@ class AuthService {
         }
     }
     
-    func createUser(name: String, email: String, avatarName: String, avatarColor: String, completion: @escaping CompletionHandler) {
+    func createUser(name: String, email: String, completion: @escaping CompletionHandler) {
         
         let lowerCaseEmail = email.lowercased()
         
         let body: [String: Any] = [
             "email": lowerCaseEmail,
             "name": name,
-            "avatarName": avatarName,
-            "avatarColor": avatarColor
         ]
         
         Alamofire.request(URL_USER_ADD, method: .post, parameters: body, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
@@ -162,12 +160,10 @@ class AuthService {
         do {
             let json = try JSON(data: data)
             let id = json["_id"].stringValue
-            let color = json["avatarColor"].stringValue
-            let avatarName = json["avatarName"].stringValue
             let email = json["email"].stringValue
             let name = json["name"].stringValue
             
-            UserDataService.instance.setUserData(id: id, color: color, avatarName: avatarName, email: email, name: name)
+            UserDataService.instance.setUserData(id: id, email: email, name: name)
         } catch {
             print("AUTH ERROR #2")
         }
