@@ -8,7 +8,6 @@
 
 import Intents
 
-
 class IntentHandler: INExtension, INRidesharingDomainHandling {
     
     override func handler(for intent: INIntent) -> Any {
@@ -16,13 +15,10 @@ class IntentHandler: INExtension, INRidesharingDomainHandling {
         // you can override this and return the handler you want for that particular intent.
         
         return self
+    
     }
     
-
-
 // MARK: REQUEST RIDE
-
-    
     func handle(intent: INRequestRideIntent, completion: @escaping (INRequestRideIntentResponse) -> Void) {
         // Handles which ride was selected
         
@@ -75,40 +71,30 @@ class IntentHandler: INExtension, INRidesharingDomainHandling {
         completion(response)
         
         // Handler should confirm the request and create an INRequestRideIntentResponse object about whether the ride was booked successfully
+    
         
     }
-    
-    
-    
     
     func confirm(intent: INRequestRideIntent, completion: @escaping (INRequestRideIntentResponse) -> Void) {
         
+        
     }
-    
-    
     
     func resolvePickupLocation(for intent: INRequestRideIntent, with completion: @escaping (INPlacemarkResolutionResult) -> Void) {
         // Finds out if we have enough info to pickup at this location
         
         // Talk to server and get intent to find out location of ride
+        
     }
-    
-    
     
     func resolveDropOffLocation(for intent: INListRideOptionsIntent, with completion: @escaping (INPlacemarkResolutionResult) -> Void) {
         // Finds out if we have enough info to dropoff to this location
         
         // Talk to server and get intent to find out location of ride
+        
     }
-    
-    
-    
-
-
 
 // MARK: LIST RIDE OPTIONS
-
-    
     func handle(intent: INListRideOptionsIntent, completion: @escaping (INListRideOptionsIntentResponse) -> Void) {
         
         // Our intent just sends back the list of available cars and Maps does the rest
@@ -132,15 +118,11 @@ class IntentHandler: INExtension, INRidesharingDomainHandling {
         resp.rideOptions = [ride1, ride2, ride3, ride4]
         
         completion(resp)
+        
     }
     
-
-
-
 // MARK: GET RIDE STATUS
 
-
-    
     var observer: INGetRideStatusIntentResponseObserver
     var timer: Timer
     
@@ -154,8 +136,8 @@ class IntentHandler: INExtension, INRidesharingDomainHandling {
             // user activity is set to app if user requests to launch the app to get more info then we might send the booking ID in there so the app can pickup where the extension left off
         completion(result)
         }
+        
     }
-    
     
     func startSendingUpdates(for intent: INGetRideStatusIntent, to observer: INGetRideStatusIntentResponseObserver) {
         // Maps calls this method only once. Your implementation must set up a timer or other repeating task to generate status updates for the ride and deliver them to the provided observer object. Maps uses your updates to keep the user informed about the ride’s location and estimated arrival time.
@@ -180,8 +162,8 @@ class IntentHandler: INExtension, INRidesharingDomainHandling {
                 // Provide updates when the ride phase or completion status changes - provide an udpate when vehicle is approaching pickup location or arrives at it
             })
         }
+        
     }
-    
     
     func stopSendingUpdates(for intent: INGetRideStatusIntent) {
         // Upon completion of ride and after charges have settled
@@ -189,27 +171,18 @@ class IntentHandler: INExtension, INRidesharingDomainHandling {
         self.timer?.invalidate()
         
         // Clean up any other state information
+        
     }
 
-
-
-
 // MARK: CANCEL RIDE
- 
-    
     func handle(cancelRide intent: INCancelRideIntent, completion: @escaping (INCancelRideIntentResponse) -> Void) {
         
     }
-
-
-
-// MARK: SEND RIDE FEEDBACK
     
+// MARK: SEND RIDE FEEDBACK
     func handle(sendRideFeedback sendRideFeedbackintent: INSendRideFeedbackIntent, completion: @escaping (INSendRideFeedbackIntentResponse) -> Void) {
         
     }
-
-
 
 }
 
