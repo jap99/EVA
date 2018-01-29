@@ -41,6 +41,7 @@
 		9FE34BE9201E693900B8B1BA /* AddChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE34BE8201E693900B8B1BA /* AddChannelVC.swift */; };
 		9FE34BEB201E697B00B8B1BA /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE34BEA201E697B00B8B1BA /* SocketService.swift */; };
 		9FE34BED201E69CB00B8B1BA /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE34BEC201E69CB00B8B1BA /* ChannelCell.swift */; };
+		9FE34BEF201E827800B8B1BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FE34BEE201E827700B8B1BA /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		9FE34BE8201E693900B8B1BA /* AddChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelVC.swift; sourceTree = "<group>"; };
 		9FE34BEA201E697B00B8B1BA /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		9FE34BEC201E69CB00B8B1BA /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
+		9FE34BEE201E827700B8B1BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C751353B34D2A498E7ED0C82 /* Pods_EvaVoiceCommands_Intents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EvaVoiceCommands_Intents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0023468221854A938944984 /* Pods-EvaVoiceCommands-Intents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvaVoiceCommands-Intents.release.xcconfig"; path = "Pods/Target Support Files/Pods-EvaVoiceCommands-Intents/Pods-EvaVoiceCommands-Intents.release.xcconfig"; sourceTree = "<group>"; };
 		D3ECE76D922F5CF9DC08683D /* Pods-EvaVoiceCommands.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvaVoiceCommands.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EvaVoiceCommands/Pods-EvaVoiceCommands.debug.xcconfig"; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				9F69848420198B6D00215753 /* AppDelegate.swift */,
 				9F69848620198B6D00215753 /* ViewController.swift */,
 				9F69848820198B6D00215753 /* Main.storyboard */,
+				9FE34BEE201E827700B8B1BA /* GoogleService-Info.plist */,
 				9F69848B20198B6D00215753 /* Assets.xcassets */,
 				9F69848D20198B6D00215753 /* LaunchScreen.storyboard */,
 				9F69849020198B6D00215753 /* Info.plist */,
@@ -405,7 +408,7 @@
 					};
 					9F6984A320198CA800215753 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -441,6 +444,7 @@
 			files = (
 				9F69848F20198B6D00215753 /* LaunchScreen.storyboard in Resources */,
 				9F69848C20198B6D00215753 /* Assets.xcassets in Resources */,
+				9FE34BEF201E827800B8B1BA /* GoogleService-Info.plist in Resources */,
 				9F69848A20198B6D00215753 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,7 +597,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EvaVoiceCommands/Pods-EvaVoiceCommands-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EvaVoiceCommands/Pods-EvaVoiceCommands-resources.sh\"\n\n\"${PODS_ROOT}/Fabric/run\"";
 			showEnvVarsInLog = 0;
 		};
 		E7D8CBDA46B82C22769B76E5 /* [CP] Check Pods Manifest.lock */ = {
@@ -732,8 +736,10 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = VWFZU9229C;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -753,6 +759,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "5746c363-2803-4f27-80a4-9897f4a4e0b0";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -788,9 +796,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = VWFZU9229C;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -803,6 +813,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "d8bb1614-e27e-4f67-98ea-0db2707b7508";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
@@ -817,6 +829,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = EvaVoiceCommands/EvaVoiceCommands.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Javid Poornasir (N5U7J3K579)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = VWFZU9229C;
 				INFOPLIST_FILE = EvaVoiceCommands/Info.plist;
@@ -840,14 +853,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = EvaVoiceCommands/EvaVoiceCommands.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Javid Poornasir (VWFZU9229C)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Javid Poornasir (VWFZU9229C)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = VWFZU9229C;
 				INFOPLIST_FILE = EvaVoiceCommands/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cleandev.EvaVoiceCommands;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5746c363-2803-4f27-80a4-9897f4a4e0b0";
-				PROVISIONING_PROFILE_SPECIFIER = "EvaVoiceCommands-DEV";
+				PROVISIONING_PROFILE = "d8bb1614-e27e-4f67-98ea-0db2707b7508";
+				PROVISIONING_PROFILE_SPECIFIER = "EvaVoiceCommands-DISTR";
 				SWIFT_OBJC_BRIDGING_HEADER = "EvaVoiceCommands/EvaVoiceCommands-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -859,12 +874,16 @@
 			baseConfigurationReference = 4F06DD9BD61A23444CA16470 /* Pods-EvaVoiceCommands-IntentsUI.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "EvaVoiceCommands-IntentsUI/EvaVoiceCommands-IntentsUI.entitlements";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Javid Poornasir (N5U7J3K579)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Javid Poornasir (N5U7J3K579)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = VWFZU9229C;
 				INFOPLIST_FILE = "EvaVoiceCommands-IntentsUI/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cleandev.EvaVoiceCommands.EvaVoiceCommands-IntentsUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9b53f3d6-c748-4936-bb42-d077d29e7a0b";
+				PROVISIONING_PROFILE_SPECIFIER = "EvaVoiceCommandsIntentsUI-DEV";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -876,12 +895,16 @@
 			baseConfigurationReference = 9B0928A8E8CF6F73AE8AC9E7 /* Pods-EvaVoiceCommands-IntentsUI.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "EvaVoiceCommands-IntentsUI/EvaVoiceCommands-IntentsUI.entitlements";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Javid Poornasir (VWFZU9229C)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Javid Poornasir (VWFZU9229C)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = VWFZU9229C;
 				INFOPLIST_FILE = "EvaVoiceCommands-IntentsUI/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cleandev.EvaVoiceCommands.EvaVoiceCommands-IntentsUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a6e5bd45-4aa6-442a-8e41-c5d0fc2ed2be";
+				PROVISIONING_PROFILE_SPECIFIER = "EvaVoiceCommandsIntentsUI-DISTR";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -893,6 +916,7 @@
 			baseConfigurationReference = 336383E275935C2C1635DC84 /* Pods-EvaVoiceCommands-Intents.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "EvaVoiceCommands-Intents/EvaVoiceCommands-Intents.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Javid Poornasir (N5U7J3K579)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = VWFZU9229C;
 				INFOPLIST_FILE = "EvaVoiceCommands-Intents/Info.plist";
@@ -912,14 +936,15 @@
 			baseConfigurationReference = D0023468221854A938944984 /* Pods-EvaVoiceCommands-Intents.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "EvaVoiceCommands-Intents/EvaVoiceCommands-Intents.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Javid Poornasir (VWFZU9229C)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = VWFZU9229C;
 				INFOPLIST_FILE = "EvaVoiceCommands-Intents/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cleandev.EvaVoiceCommands.EvaVoiceCommands-Intents";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d90a6148-2387-49b1-a4bf-f61dfb1a5874";
-				PROVISIONING_PROFILE_SPECIFIER = "EvaVoiceCommandsIntents2-DEV";
+				PROVISIONING_PROFILE = "70e1cdb4-be25-4809-a80c-93b082c87d76";
+				PROVISIONING_PROFILE_SPECIFIER = "EvaVoiceCommandsIntents-DISTR";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -50,3 +50,22 @@ let BEARER_HEADER =  [
 ]
 
 
+import Foundation
+
+// Used for internal testing ---> sherpa-is-test
+//let SERVERKEY = "AAAAQ1B8tBw:APA91bHbC8jQCieFjUj97TRDDeeekjlUa2468zwqip4XvfG1H3mmHMOlHKvzi4ggIE5Y0QsV4_k6VFXWTOWML-yIJjOeSDpzXlui5xNGYAqPEohOPdhmITyGPGk03sNuPp5mklVh-hI6d16cWz1xh2vq7oTrp74BAQ"
+
+
+// FIREBASE
+let SERVERKEY = "AAAAv1Y95EA:APA91bE3v3IgYQrK_KXiHpAlzIUzHHBgx6VHQwUWz-y8H9dWgIh4eQ82-HpW36N2dzSKAnocTWBl5_31G1Xm3PkQ34kljDZ0NRrm2oif010d-xQZoTd56DGD89O0Bs35S1h7KNGbBE7g"
+
+
+
+var DEVICE_ID : String = ""
+
+//var navBarColor: UIColor = Theme.primaryOrangeColor()
+//var statusBarColor: UIColor = Theme.dimPrimaryOrangeColor()
+//
+//var navTitleColor: UIColor = UIColor.white
+
+
