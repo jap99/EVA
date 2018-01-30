@@ -63,9 +63,9 @@ let SERVERKEY = "AAAAv1Y95EA:APA91bE3v3IgYQrK_KXiHpAlzIUzHHBgx6VHQwUWz-y8H9dWgIh
 
 var DEVICE_ID : String = ""
 
-//var navBarColor: UIColor = Theme.primaryOrangeColor()
-//var statusBarColor: UIColor = Theme.dimPrimaryOrangeColor()
-//
-//var navTitleColor: UIColor = UIColor.white
+var navBarColor: UIColor = Theme.primaryOrangeColor()
+var statusBarColor: UIColor = Theme.dimPrimaryOrangeColor()
+
+var navTitleColor: UIColor = UIColor.white
 
 

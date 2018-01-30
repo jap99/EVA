@@ -42,6 +42,18 @@
 		9FE34BEB201E697B00B8B1BA /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE34BEA201E697B00B8B1BA /* SocketService.swift */; };
 		9FE34BED201E69CB00B8B1BA /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE34BEC201E69CB00B8B1BA /* ChannelCell.swift */; };
 		9FE34BEF201E827800B8B1BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9FE34BEE201E827700B8B1BA /* GoogleService-Info.plist */; };
+		9FE34BF3201EB1F600B8B1BA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE34BF2201EB1F600B8B1BA /* BaseViewController.swift */; };
+		9FE34BF5201EB3DA00B8B1BA /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE34BF4201EB3DA00B8B1BA /* Theme.swift */; };
+		9FE34BF7201EB44500B8B1BA /* AutoCompleteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE34BF6201EB44500B8B1BA /* AutoCompleteController.swift */; };
+		9FE34C0A201EB47600B8B1BA /* GFBase32Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE34BFF201EB47600B8B1BA /* GFBase32Utils.m */; };
+		9FE34C0B201EB47600B8B1BA /* GeoFire.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE34C01201EB47600B8B1BA /* GeoFire.m */; };
+		9FE34C0C201EB47600B8B1BA /* GFGeoHashQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE34C02201EB47600B8B1BA /* GFGeoHashQuery.m */; };
+		9FE34C0D201EB47600B8B1BA /* GFQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE34C03201EB47600B8B1BA /* GFQuery.m */; };
+		9FE34C0E201EB47600B8B1BA /* GFGeoHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE34C04201EB47600B8B1BA /* GFGeoHash.m */; };
+		9FE34C10201EB51000B8B1BA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE34C0F201EB51000B8B1BA /* Extensions.swift */; };
+		9FE34C12201EB56600B8B1BA /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE34C11201EB56600B8B1BA /* DataService.swift */; };
+		9FE34C14201EB5A200B8B1BA /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE34C13201EB5A200B8B1BA /* AuthServices.swift */; };
+		9FE34C16201EB70300B8B1BA /* OrderAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE34C15201EB70300B8B1BA /* OrderAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +135,28 @@
 		9FE34BEA201E697B00B8B1BA /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		9FE34BEC201E69CB00B8B1BA /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 		9FE34BEE201E827700B8B1BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9FE34BF2201EB1F600B8B1BA /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		9FE34BF4201EB3DA00B8B1BA /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		9FE34BF6201EB44500B8B1BA /* AutoCompleteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCompleteController.swift; sourceTree = "<group>"; };
+		9FE34BF9201EB47600B8B1BA /* GeoFire-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GeoFire-Prefix.pch"; sourceTree = "<group>"; };
+		9FE34BFB201EB47600B8B1BA /* GFBase32Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFBase32Utils.h; sourceTree = "<group>"; };
+		9FE34BFC201EB47600B8B1BA /* GFGeoHashQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFGeoHashQuery.h; sourceTree = "<group>"; };
+		9FE34BFD201EB47600B8B1BA /* GFGeoHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFGeoHash.h; sourceTree = "<group>"; };
+		9FE34BFE201EB47600B8B1BA /* GFQuery+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GFQuery+Private.h"; sourceTree = "<group>"; };
+		9FE34BFF201EB47600B8B1BA /* GFBase32Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFBase32Utils.m; sourceTree = "<group>"; };
+		9FE34C00201EB47600B8B1BA /* GeoFire+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GeoFire+Private.h"; sourceTree = "<group>"; };
+		9FE34C01201EB47600B8B1BA /* GeoFire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoFire.m; sourceTree = "<group>"; };
+		9FE34C02201EB47600B8B1BA /* GFGeoHashQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFGeoHashQuery.m; sourceTree = "<group>"; };
+		9FE34C03201EB47600B8B1BA /* GFQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFQuery.m; sourceTree = "<group>"; };
+		9FE34C04201EB47600B8B1BA /* GFGeoHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFGeoHash.m; sourceTree = "<group>"; };
+		9FE34C06201EB47600B8B1BA /* GFRegionQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFRegionQuery.h; sourceTree = "<group>"; };
+		9FE34C07201EB47600B8B1BA /* GeoFire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoFire.h; sourceTree = "<group>"; };
+		9FE34C08201EB47600B8B1BA /* GFQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFQuery.h; sourceTree = "<group>"; };
+		9FE34C09201EB47600B8B1BA /* GFCircleQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCircleQuery.h; sourceTree = "<group>"; };
+		9FE34C0F201EB51000B8B1BA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		9FE34C11201EB56600B8B1BA /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		9FE34C13201EB5A200B8B1BA /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
+		9FE34C15201EB70300B8B1BA /* OrderAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAnnotation.swift; sourceTree = "<group>"; };
 		C751353B34D2A498E7ED0C82 /* Pods_EvaVoiceCommands_Intents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EvaVoiceCommands_Intents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0023468221854A938944984 /* Pods-EvaVoiceCommands-Intents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvaVoiceCommands-Intents.release.xcconfig"; path = "Pods/Target Support Files/Pods-EvaVoiceCommands-Intents/Pods-EvaVoiceCommands-Intents.release.xcconfig"; sourceTree = "<group>"; };
 		D3ECE76D922F5CF9DC08683D /* Pods-EvaVoiceCommands.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvaVoiceCommands.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EvaVoiceCommands/Pods-EvaVoiceCommands.debug.xcconfig"; sourceTree = "<group>"; };
@@ -211,6 +245,7 @@
 				9F69848B20198B6D00215753 /* Assets.xcassets */,
 				9F69848D20198B6D00215753 /* LaunchScreen.storyboard */,
 				9F69849020198B6D00215753 /* Info.plist */,
+				9FE34BF8201EB47600B8B1BA /* GeoFire */,
 				9FE34BC7201E4AB500B8B1BA /* SWRevealViewController.h */,
 				9FE34BC6201E4AB500B8B1BA /* SWRevealViewController.m */,
 				9FE34BC5201E4AB400B8B1BA /* EvaVoiceCommands-Bridging-Header.h */,
@@ -258,6 +293,7 @@
 			children = (
 				9FE34BE0201E601F00B8B1BA /* Channel.swift */,
 				9FE34BE2201E603000B8B1BA /* Message.swift */,
+				9FE34C15201EB70300B8B1BA /* OrderAnnotation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -289,6 +325,10 @@
 				9FE34BD3201E583F00B8B1BA /* Constants.swift */,
 				9FE34BD7201E5EE500B8B1BA /* RoundedButton.swift */,
 				9FE34BE6201E68DB00B8B1BA /* CircleImage.swift */,
+				9FE34BF2201EB1F600B8B1BA /* BaseViewController.swift */,
+				9FE34BF4201EB3DA00B8B1BA /* Theme.swift */,
+				9FE34BF6201EB44500B8B1BA /* AutoCompleteController.swift */,
+				9FE34C0F201EB51000B8B1BA /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -300,8 +340,48 @@
 				9FE34BDC201E5F3A00B8B1BA /* UserDataService.swift */,
 				9FE34BDE201E5FED00B8B1BA /* MessageService.swift */,
 				9FE34BEA201E697B00B8B1BA /* SocketService.swift */,
+				9FE34C11201EB56600B8B1BA /* DataService.swift */,
+				9FE34C13201EB5A200B8B1BA /* AuthServices.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		9FE34BF8201EB47600B8B1BA /* GeoFire */ = {
+			isa = PBXGroup;
+			children = (
+				9FE34BF9201EB47600B8B1BA /* GeoFire-Prefix.pch */,
+				9FE34BFA201EB47600B8B1BA /* Implementation */,
+				9FE34C05201EB47600B8B1BA /* API */,
+			);
+			path = GeoFire;
+			sourceTree = "<group>";
+		};
+		9FE34BFA201EB47600B8B1BA /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				9FE34BFB201EB47600B8B1BA /* GFBase32Utils.h */,
+				9FE34BFC201EB47600B8B1BA /* GFGeoHashQuery.h */,
+				9FE34BFD201EB47600B8B1BA /* GFGeoHash.h */,
+				9FE34BFE201EB47600B8B1BA /* GFQuery+Private.h */,
+				9FE34BFF201EB47600B8B1BA /* GFBase32Utils.m */,
+				9FE34C00201EB47600B8B1BA /* GeoFire+Private.h */,
+				9FE34C01201EB47600B8B1BA /* GeoFire.m */,
+				9FE34C02201EB47600B8B1BA /* GFGeoHashQuery.m */,
+				9FE34C03201EB47600B8B1BA /* GFQuery.m */,
+				9FE34C04201EB47600B8B1BA /* GFGeoHash.m */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		9FE34C05201EB47600B8B1BA /* API */ = {
+			isa = PBXGroup;
+			children = (
+				9FE34C06201EB47600B8B1BA /* GFRegionQuery.h */,
+				9FE34C07201EB47600B8B1BA /* GeoFire.h */,
+				9FE34C08201EB47600B8B1BA /* GFQuery.h */,
+				9FE34C09201EB47600B8B1BA /* GFCircleQuery.h */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,7 +461,7 @@
 					9F69848020198B6D00215753 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0920;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -396,7 +476,7 @@
 					};
 					9F69849A20198CA800215753 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -408,7 +488,7 @@
 					};
 					9F6984A320198CA800215753 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -626,24 +706,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FE34BCD201E4FA500B8B1BA /* ChatVC.swift in Sources */,
+				9FE34C0E201EB47600B8B1BA /* GFGeoHash.m in Sources */,
 				9FE34BE7201E68DB00B8B1BA /* CircleImage.swift in Sources */,
+				9FE34C16201EB70300B8B1BA /* OrderAnnotation.swift in Sources */,
 				9FE34BDF201E5FED00B8B1BA /* MessageService.swift in Sources */,
 				9F69848720198B6D00215753 /* ViewController.swift in Sources */,
 				9FE34BE1201E601F00B8B1BA /* Channel.swift in Sources */,
+				9FE34C0B201EB47600B8B1BA /* GeoFire.m in Sources */,
+				9FE34BF3201EB1F600B8B1BA /* BaseViewController.swift in Sources */,
+				9FE34BF5201EB3DA00B8B1BA /* Theme.swift in Sources */,
+				9FE34C12201EB56600B8B1BA /* DataService.swift in Sources */,
+				9FE34C0C201EB47600B8B1BA /* GFGeoHashQuery.m in Sources */,
+				9FE34BF7201EB44500B8B1BA /* AutoCompleteController.swift in Sources */,
 				9FE34BD6201E5DA500B8B1BA /* LoginVC.swift in Sources */,
 				9FE34BDD201E5F3A00B8B1BA /* UserDataService.swift in Sources */,
 				9FE34BE9201E693900B8B1BA /* AddChannelVC.swift in Sources */,
+				9FE34C14201EB5A200B8B1BA /* AuthServices.swift in Sources */,
 				9FE34BEB201E697B00B8B1BA /* SocketService.swift in Sources */,
 				9FE34BD1201E529200B8B1BA /* GradientView.swift in Sources */,
 				9FE34BED201E69CB00B8B1BA /* ChannelCell.swift in Sources */,
 				9FE34BD8201E5EE500B8B1BA /* RoundedButton.swift in Sources */,
 				9FE34BE5201E630100B8B1BA /* CreateAccountVC.swift in Sources */,
 				9F69848520198B6D00215753 /* AppDelegate.swift in Sources */,
+				9FE34C0A201EB47600B8B1BA /* GFBase32Utils.m in Sources */,
 				9FE34BD4201E583F00B8B1BA /* Constants.swift in Sources */,
 				9FE34BDB201E5F1D00B8B1BA /* AuthService.swift in Sources */,
 				9FE34BC8201E4AB500B8B1BA /* SWRevealViewController.m in Sources */,
 				9FE34BCF201E4FB000B8B1BA /* ChannelVC.swift in Sources */,
 				9FE34BE3201E603000B8B1BA /* Message.swift in Sources */,
+				9FE34C0D201EB47600B8B1BA /* GFQuery.m in Sources */,
+				9FE34C10201EB51000B8B1BA /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -830,14 +922,15 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = EvaVoiceCommands/EvaVoiceCommands.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Javid Poornasir (N5U7J3K579)";
-				CODE_SIGN_STYLE = Manual;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VWFZU9229C;
 				INFOPLIST_FILE = EvaVoiceCommands/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cleandev.EvaVoiceCommands;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5746c363-2803-4f27-80a4-9897f4a4e0b0";
-				PROVISIONING_PROFILE_SPECIFIER = "EvaVoiceCommands-DEV";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "EvaVoiceCommands/EvaVoiceCommands-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -854,15 +947,15 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = EvaVoiceCommands/EvaVoiceCommands.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Javid Poornasir (VWFZU9229C)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Javid Poornasir (VWFZU9229C)";
-				CODE_SIGN_STYLE = Manual;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VWFZU9229C;
 				INFOPLIST_FILE = EvaVoiceCommands/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cleandev.EvaVoiceCommands;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d8bb1614-e27e-4f67-98ea-0db2707b7508";
-				PROVISIONING_PROFILE_SPECIFIER = "EvaVoiceCommands-DISTR";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "EvaVoiceCommands/EvaVoiceCommands-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -875,15 +968,15 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "EvaVoiceCommands-IntentsUI/EvaVoiceCommands-IntentsUI.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Javid Poornasir (N5U7J3K579)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Javid Poornasir (N5U7J3K579)";
-				CODE_SIGN_STYLE = Manual;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VWFZU9229C;
 				INFOPLIST_FILE = "EvaVoiceCommands-IntentsUI/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cleandev.EvaVoiceCommands.EvaVoiceCommands-IntentsUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9b53f3d6-c748-4936-bb42-d077d29e7a0b";
-				PROVISIONING_PROFILE_SPECIFIER = "EvaVoiceCommandsIntentsUI-DEV";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -896,15 +989,15 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "EvaVoiceCommands-IntentsUI/EvaVoiceCommands-IntentsUI.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Javid Poornasir (VWFZU9229C)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Javid Poornasir (VWFZU9229C)";
-				CODE_SIGN_STYLE = Manual;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VWFZU9229C;
 				INFOPLIST_FILE = "EvaVoiceCommands-IntentsUI/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cleandev.EvaVoiceCommands.EvaVoiceCommands-IntentsUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a6e5bd45-4aa6-442a-8e41-c5d0fc2ed2be";
-				PROVISIONING_PROFILE_SPECIFIER = "EvaVoiceCommandsIntentsUI-DISTR";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -917,14 +1010,15 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "EvaVoiceCommands-Intents/EvaVoiceCommands-Intents.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Javid Poornasir (N5U7J3K579)";
-				CODE_SIGN_STYLE = Manual;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VWFZU9229C;
 				INFOPLIST_FILE = "EvaVoiceCommands-Intents/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cleandev.EvaVoiceCommands.EvaVoiceCommands-Intents";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d90a6148-2387-49b1-a4bf-f61dfb1a5874";
-				PROVISIONING_PROFILE_SPECIFIER = "EvaVoiceCommandsIntents2-DEV";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -937,14 +1031,15 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "EvaVoiceCommands-Intents/EvaVoiceCommands-Intents.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Javid Poornasir (VWFZU9229C)";
-				CODE_SIGN_STYLE = Manual;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VWFZU9229C;
 				INFOPLIST_FILE = "EvaVoiceCommands-Intents/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cleandev.EvaVoiceCommands.EvaVoiceCommands-Intents";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "70e1cdb4-be25-4809-a80c-93b082c87d76";
-				PROVISIONING_PROFILE_SPECIFIER = "EvaVoiceCommandsIntents-DISTR";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
