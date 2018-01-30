@@ -61,6 +61,7 @@ class ChatVC: BaseViewController, CLLocationManagerDelegate, GMSMapViewDelegate,
 //      setupIfAuthenticated()
 //      self.updateMap()
  
+        UIApplication.shared.statusBarStyle = .lightContent
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -70,6 +71,8 @@ class ChatVC: BaseViewController, CLLocationManagerDelegate, GMSMapViewDelegate,
 //      setButtonStatus()
 //      setupIfAuthenticated()
 //      self.updateMap()
+        
+        UIApplication.shared.statusBarStyle = .lightContent
         
     }
     

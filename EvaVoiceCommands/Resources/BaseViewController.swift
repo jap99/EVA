@@ -20,10 +20,14 @@ class BaseViewController: UIViewController {
         setNavigationBarColor()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     func setNavigationBarColor() {
         self.navigationController?.navigationBar.barTintColor = navBarColor
-        UIApplication.shared.statusBarView?.backgroundColor = statusBarColor
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor.black
+        //UIApplication.shared.statusBarView?. = UIColor.white
         self.navigationController?.navigationBar.isTranslucent = false
        // self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: navTitleColor, NSFontAttributeName: UIFont(name: "Nunito-Light", size: 17)!]
         
