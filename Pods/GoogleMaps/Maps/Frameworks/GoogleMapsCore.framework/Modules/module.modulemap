@@ -1,6 +1,6 @@
 framework module GoogleMapsCore {
   export *
-  module * { export *}
+//  module * { export *}
   link "z"
   link framework "Accelerate"
   link framework "CoreData"
