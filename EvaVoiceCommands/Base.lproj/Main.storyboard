@@ -471,31 +471,7 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="QtV-db-icM">
-                                <rect key="frame" x="20" y="-20122" width="335" height="40975"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6t-6v-jWA">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="40883"/>
-                                        <string key="text">In order to work fully, we need to read your photo library, record your voice, and transcribe what you said. When you click to button below you will be asked to grant those perissions, but you can change your mind later.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoP-Zk-k21">
-                                        <rect key="frame" x="0.0" y="40933" width="335" height="42"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="Continue"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="QtV-db-icM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="FYW-D7-XD3"/>
-                            <constraint firstItem="QtV-db-icM" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Q28-3g-mz6"/>
-                            <constraint firstItem="QtV-db-icM" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" constant="-40" id="uSB-sO-MR3"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="zax-AL-7gX"/>
@@ -649,6 +625,26 @@
                                     <constraint firstItem="Wvi-ds-CRk" firstAttribute="top" secondItem="MW5-H8-vOq" secondAttribute="top" constant="358" id="z1J-kS-usd"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="QtV-db-icM">
+                                <rect key="frame" x="0.0" y="77" width="375" height="590"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6t-6v-jWA">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="550"/>
+                                        <string key="text">In order to work fully, we need to read your photo library, record your voice, and transcribe what you said. When you click to button below you will be asked to grant those perissions, but you can change your mind later.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoP-Zk-k21">
+                                        <rect key="frame" x="0.0" y="590" width="375" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Continue"/>
+                                        <connections>
+                                            <action selector="requestPermissions:" destination="fKk-ep-a2P" eventType="touchUpInside" id="w2G-NO-Vyp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -657,7 +653,13 @@
                             <constraint firstItem="MW5-H8-vOq" firstAttribute="top" secondItem="vyW-ZB-pNt" secondAttribute="bottom" id="8Zl-Il-lEL"/>
                             <constraint firstItem="vyW-ZB-pNt" firstAttribute="leading" secondItem="umz-f4-g2l" secondAttribute="leading" id="90c-Kb-cFl"/>
                             <constraint firstItem="MW5-H8-vOq" firstAttribute="leading" secondItem="umz-f4-g2l" secondAttribute="leading" id="A2j-XP-V62"/>
+                            <constraint firstItem="QtV-db-icM" firstAttribute="top" secondItem="vyW-ZB-pNt" secondAttribute="bottom" id="Ji5-WW-684"/>
+                            <constraint firstItem="QtV-db-icM" firstAttribute="leading" secondItem="lbV-sd-48k" secondAttribute="leading" id="KSd-tv-WCk"/>
+                            <constraint firstItem="umz-f4-g2l" firstAttribute="bottom" secondItem="QtV-db-icM" secondAttribute="bottom" id="PRc-89-ebE"/>
+                            <constraint firstItem="QtV-db-icM" firstAttribute="centerY" secondItem="lbV-sd-48k" secondAttribute="centerY" id="RrR-Fp-fEM"/>
                             <constraint firstItem="vyW-ZB-pNt" firstAttribute="trailing" secondItem="umz-f4-g2l" secondAttribute="trailing" id="ZNb-vp-dyW"/>
+                            <constraint firstItem="QtV-db-icM" firstAttribute="centerX" secondItem="lbV-sd-48k" secondAttribute="centerX" id="bVO-rh-bNq"/>
+                            <constraint firstAttribute="trailing" secondItem="QtV-db-icM" secondAttribute="trailing" id="c4i-nb-CEh"/>
                             <constraint firstItem="MW5-H8-vOq" firstAttribute="trailing" secondItem="umz-f4-g2l" secondAttribute="trailing" id="sG1-y2-gtB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="umz-f4-g2l"/>
@@ -665,6 +667,8 @@
                     <connections>
                         <outlet property="googleMapsView" destination="MW5-H8-vOq" id="buL-Dp-a3I"/>
                         <outlet property="menuBtn" destination="vDh-iU-mJt" id="1Yg-NP-XM3"/>
+                        <outlet property="permissionStackView" destination="QtV-db-icM" id="GnB-rE-UDn"/>
+                        <outlet property="permissionsLabel" destination="j6t-6v-jWA" id="JUH-kh-mG1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NJR-N2-q73" userLabel="First Responder" sceneMemberID="firstResponder"/>

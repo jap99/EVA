@@ -12,6 +12,7 @@
 		7BB7CC3F09706ACE8FB7409D /* Pods_EvaVoiceCommands.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1E3606FC26DA9E514FF5F4 /* Pods_EvaVoiceCommands.framework */; };
 		9F00F84E201E0FF500C2F3DD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F00F84D201E0FF500C2F3DD /* MapKit.framework */; };
 		9F00F84F201E100E00C2F3DD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F00F84D201E0FF500C2F3DD /* MapKit.framework */; };
+		9F20D8A52021195A00AF0551 /* GoogleMaps.framework in Resources */ = {isa = PBXBuildFile; fileRef = 9F20D8A32021182B00AF0551 /* GoogleMaps.framework */; };
 		9F69848520198B6D00215753 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F69848420198B6D00215753 /* AppDelegate.swift */; };
 		9F69848720198B6D00215753 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F69848620198B6D00215753 /* ViewController.swift */; };
 		9F69848A20198B6D00215753 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F69848820198B6D00215753 /* Main.storyboard */; };
@@ -96,6 +97,7 @@
 		93997AE3825BA5D3EBC33915 /* Pods-EvaVoiceCommands.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvaVoiceCommands.release.xcconfig"; path = "Pods/Target Support Files/Pods-EvaVoiceCommands/Pods-EvaVoiceCommands.release.xcconfig"; sourceTree = "<group>"; };
 		9B0928A8E8CF6F73AE8AC9E7 /* Pods-EvaVoiceCommands-IntentsUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvaVoiceCommands-IntentsUI.release.xcconfig"; path = "Pods/Target Support Files/Pods-EvaVoiceCommands-IntentsUI/Pods-EvaVoiceCommands-IntentsUI.release.xcconfig"; sourceTree = "<group>"; };
 		9F00F84D201E0FF500C2F3DD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9F20D8A32021182B00AF0551 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Pods/GoogleMaps/Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
 		9F69848120198B6D00215753 /* EvaVoiceCommands.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EvaVoiceCommands.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F69848420198B6D00215753 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F69848620198B6D00215753 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 		9F69847820198B6D00215753 = {
 			isa = PBXGroup;
 			children = (
+				9F20D8A32021182B00AF0551 /* GoogleMaps.framework */,
 				9F69848320198B6D00215753 /* EvaVoiceCommands */,
 				9F69849C20198CA800215753 /* EvaVoiceCommands-Intents */,
 				9F6984A820198CA800215753 /* EvaVoiceCommands-IntentsUI */,
@@ -522,6 +525,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F20D8A52021195A00AF0551 /* GoogleMaps.framework in Resources */,
 				9F69848F20198B6D00215753 /* LaunchScreen.storyboard in Resources */,
 				9F69848C20198B6D00215753 /* Assets.xcassets in Resources */,
 				9FE34BEF201E827800B8B1BA /* GoogleService-Info.plist in Resources */,

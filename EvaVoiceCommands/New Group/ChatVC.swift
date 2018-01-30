@@ -15,10 +15,15 @@ import FirebaseAuth
 import FirebaseDatabase
 import SwiftKeychainWrapper
 import MapKit
+import AVFoundation
+import Intents
+import Speech
 
 class ChatVC: BaseViewController, CLLocationManagerDelegate, GMSMapViewDelegate, UISearchBarDelegate {
 
     @IBOutlet weak var menuBtn: UIButton!
+    @IBOutlet weak var permissionsLabel: UILabel!
+    @IBOutlet weak var permissionStackView: UIStackView!
     
     var ref = DatabaseReference()
     
@@ -33,6 +38,27 @@ class ChatVC: BaseViewController, CLLocationManagerDelegate, GMSMapViewDelegate,
     @IBOutlet weak var goOnlineButton: UIButton!
     @IBOutlet weak var getAquoteStackView: UIStackView!
     @IBOutlet weak var googleMapsView: GMSMapView!
+    // For night time
+    let kMapStyle = "[" +
+        "  {" +
+        "    \"featureType\": \"poi.business\"," +
+        "    \"elementType\": \"all\"," +
+        "    \"stylers\": [" +
+        "      {" +
+        "        \"visibility\": \"on\"" +
+        "      }" +
+        "    ]" +
+        "  }," +
+        "  {" +
+        "    \"featureType\": \"transit\"," +
+        "    \"elementType\": \"labels.icon\"," +
+        "    \"stylers\": [" +
+        "      {" +
+        "        \"visibility\": \"on\"" +
+        "      }" +
+        "    ]" +
+        "  }" +
+    "]"
     
     var senderRequestActive = false
     
@@ -93,6 +119,7 @@ class ChatVC: BaseViewController, CLLocationManagerDelegate, GMSMapViewDelegate,
         self.googleMapsView.delegate = self
         updateLocation(running: true)
         //annotationDetails.isHidden = true
+       
     }
     
     func setupKeychainWrapper() {
@@ -489,9 +516,17 @@ class ChatVC: BaseViewController, CLLocationManagerDelegate, GMSMapViewDelegate,
 
         if(!self.showedUserLocation) {
             self.showedUserLocation = true
-            self.googleMapsView.camera = GMSCameraPosition.camera(withTarget: userLocation.coordinate, zoom: 8.0)
+            self.googleMapsView.camera = GMSCameraPosition.camera(withTarget: userLocation.coordinate, zoom: 10.0)
 
             self.loc = CLLocation(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
+            
+//            do {
+//                googleMapsView.mapStyle = try GMSMapStyle(jsonString: kMapStyle)
+//            } catch {
+//                print("PRINTING - ONE OR MORE MAP STYLES FAILED TO LOAD. \(error)")
+//            }
+//
+//            self.view = googleMapsView
 
             updateMap()
         }
@@ -519,7 +554,7 @@ class ChatVC: BaseViewController, CLLocationManagerDelegate, GMSMapViewDelegate,
             let position = CLLocationCoordinate2DMake(latitude, longitude)
             let marker = GMSMarker(position: position)
             
-            let camera = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitude, zoom: 8)
+            let camera = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitude, zoom: 10)
             self.googleMapsView.camera = camera
             
             marker.title = "JAVID ----- HomeVC --- Address is: \(title)"
@@ -573,6 +608,66 @@ class ChatVC: BaseViewController, CLLocationManagerDelegate, GMSMapViewDelegate,
 //            }
 //        }
     }
+    
+    
+    // MARK: PERMISSIONS
+    
+    // GET PERMISSIONS FOR FOLLOWING FRAMEWORKS
+    // AVFoundation - Microphone
+    // SiriKit - Siri
+    // Speech - Transcription
+    
+    func requestSiriPermissions() {
+        
+        INPreferences.requestSiriAuthorization { (status) in
+            print("PRINTING SIRI AUTH STATUS - STATUS: \(status)")
+            DispatchQueue.main.async {
+                if status == .authorized {
+                    self.requestRecordPermissions()
+                    print("PRINTING - GOT SIRI PERMISSIONS")
+                } else {
+                    self.permissionsLabel.text = "Siri permission was declined; please enable it in settings then tap Continue again"
+                }
+            }
+            
+        }
+    }
+    
+    func requestRecordPermissions() {
+        AVAudioSession.sharedInstance().requestRecordPermission() { [unowned self] allowed in
+            DispatchQueue.main.async {
+                if allowed {
+                    self.requestTranscribePermissions()
+                    print("PRINTING - GOT RECORDING PERMISSIONS")
+                } else {
+                    self.permissionsLabel.text = "Recording permission was declined; please enable it in settings then tap Continue again"
+                }
+            }
+        }
+    }
+    
+    func requestTranscribePermissions() {
+        SFSpeechRecognizer.requestAuthorization { [unowned self] authStatus in
+            DispatchQueue.main.async {
+                if authStatus == .authorized {
+                    self.authorizationComplete()
+                    print("PRINTING - GOT TRANSCRIBE PERMISSIONS")
+                } else {
+                    self.permissionsLabel.text = "Transcribe permission was declined; please enable it in settings then tap Continue again"
+                }
+            }
+        }
+    }
+    
+    func authorizationComplete() {
+       
+        self.permissionStackView.isHidden = true
+    }
+    
+    @IBAction func requestPermissions(_ sender: Any) {
+        requestSiriPermissions()
+    }
+    
     
     
     
