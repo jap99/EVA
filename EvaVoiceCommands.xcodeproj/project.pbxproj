@@ -464,7 +464,7 @@
 					9F69848020198B6D00215753 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0920;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -479,7 +479,7 @@
 					};
 					9F69849A20198CA800215753 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -491,7 +491,7 @@
 					};
 					9F6984A320198CA800215753 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -927,14 +927,14 @@
 				CODE_SIGN_ENTITLEMENTS = EvaVoiceCommands/EvaVoiceCommands.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Javid Poornasir (N5U7J3K579)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = VWFZU9229C;
 				INFOPLIST_FILE = EvaVoiceCommands/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cleandev.EvaVoiceCommands;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "a6c2c27c-e6df-4edc-971c-5689058c2824";
+				PROVISIONING_PROFILE_SPECIFIER = "EvaVoiceCommands-DEV";
 				SWIFT_OBJC_BRIDGING_HEADER = "EvaVoiceCommands/EvaVoiceCommands-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -951,15 +951,15 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = EvaVoiceCommands/EvaVoiceCommands.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Javid Poornasir (VWFZU9229C)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = VWFZU9229C;
 				INFOPLIST_FILE = EvaVoiceCommands/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cleandev.EvaVoiceCommands;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "64e19b01-6482-4d85-b660-d75375f3d46a";
+				PROVISIONING_PROFILE_SPECIFIER = "EvaVoiceCommands-DISTR";
 				SWIFT_OBJC_BRIDGING_HEADER = "EvaVoiceCommands/EvaVoiceCommands-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -973,14 +973,14 @@
 				CODE_SIGN_ENTITLEMENTS = "EvaVoiceCommands-IntentsUI/EvaVoiceCommands-IntentsUI.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Javid Poornasir (N5U7J3K579)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = VWFZU9229C;
 				INFOPLIST_FILE = "EvaVoiceCommands-IntentsUI/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cleandev.EvaVoiceCommands.EvaVoiceCommands-IntentsUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "653d2f60-6915-4e0d-9b95-3d265b7f11a8";
+				PROVISIONING_PROFILE_SPECIFIER = "EvaVoiceCommandsIntentsUI-DEV";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -993,15 +993,15 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "EvaVoiceCommands-IntentsUI/EvaVoiceCommands-IntentsUI.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Javid Poornasir (VWFZU9229C)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = VWFZU9229C;
 				INFOPLIST_FILE = "EvaVoiceCommands-IntentsUI/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cleandev.EvaVoiceCommands.EvaVoiceCommands-IntentsUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "09866bc0-92f3-4350-92ee-c01ec77d814a";
+				PROVISIONING_PROFILE_SPECIFIER = "EvaVoiceCommandsIntentsUI-DISTR";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1015,14 +1015,14 @@
 				CODE_SIGN_ENTITLEMENTS = "EvaVoiceCommands-Intents/EvaVoiceCommands-Intents.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Javid Poornasir (N5U7J3K579)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = VWFZU9229C;
 				INFOPLIST_FILE = "EvaVoiceCommands-Intents/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cleandev.EvaVoiceCommands.EvaVoiceCommands-Intents";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "23b90a42-5042-4937-851c-258593e312a2";
+				PROVISIONING_PROFILE_SPECIFIER = "EvaVoiceCommandsIntents-DEV";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1035,15 +1035,15 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "EvaVoiceCommands-Intents/EvaVoiceCommands-Intents.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Javid Poornasir (VWFZU9229C)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = VWFZU9229C;
 				INFOPLIST_FILE = "EvaVoiceCommands-Intents/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cleandev.EvaVoiceCommands.EvaVoiceCommands-Intents";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "3000d095-0c2c-46d3-8390-0aa3655e0ac4";
+				PROVISIONING_PROFILE_SPECIFIER = "EvaVoiceCommandsIntents-DISTR";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -249,6 +249,9 @@ class ChatVC: BaseViewController, CLLocationManagerDelegate, GMSMapViewDelegate,
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var bottomBar: UILabel!
 
+    var recordingPermissionsAuthorized: Bool!
+    var siriPermissionsAuthorized: Bool!
+    var transcribePermissionsAuthorized: Bool!
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -262,6 +265,13 @@ class ChatVC: BaseViewController, CLLocationManagerDelegate, GMSMapViewDelegate,
  
         UIApplication.shared.statusBarStyle = .lightContent
         self.permissionsView.layer.cornerRadius = 6.0
+        self.permissionsView.isHidden = true
+        
+        self.callPermissionFunctions {
+            self.checkAllPermissions()
+        }
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -796,64 +806,155 @@ class ChatVC: BaseViewController, CLLocationManagerDelegate, GMSMapViewDelegate,
     
     // MARK: PERMISSIONS
     
-    // GET PERMISSIONS FOR FOLLOWING FRAMEWORKS
-    // AVFoundation - Microphone
-    // SiriKit - Siri
-    // Speech - Transcription
+        // GET PERMISSIONS FOR FOLLOWING FRAMEWORKS
+        // AVFoundation - Microphone
+        // SiriKit - Siri
+        // Speech - Transcription
     
-    func requestSiriPermissions() {
+    
+    func callPermissionFunctions(closure: () -> ()) {
+        recordingPermissionsAuthorized = checkRecordingPermissions()
+        siriPermissionsAuthorized = checkSiriPermissions()
+        transcribePermissionsAuthorized = checkTranscribePermissions()
+    }
+    
+    
+    // --- CHECK ALL PERMISSIONS ---
+    
+    func checkAllPermissions() {
         
-        INPreferences.requestSiriAuthorization { (status) in
-            print("PRINTING SIRI AUTH STATUS - STATUS: \(status)")
-            DispatchQueue.main.async {
-                if status == .authorized {
-                    self.requestRecordPermissions()
-                    print("PRINTING - GOT SIRI PERMISSIONS")
-                } else {
-                    self.permissionsLabel.text = "Siri permission was declined; please enable it in settings then tap Continue again"
-                }
-            }
+        if recordingPermissionsAuthorized && siriPermissionsAuthorized && transcribePermissionsAuthorized  {
+            self.permissionsView.isHidden = true
             
+        } else {
+            self.permissionsView.isHidden = false
         }
     }
     
-    func requestRecordPermissions() {
-        AVAudioSession.sharedInstance().requestRecordPermission() { [unowned self] allowed in
-            DispatchQueue.main.async {
-                if allowed {
-                    self.requestTranscribePermissions()
-                    print("PRINTING - GOT RECORDING PERMISSIONS")
-                } else {
-                    self.permissionsLabel.text = "Recording permission was declined; please enable it in settings then tap Continue again"
-                }
-            }
+    
+    func checkRecordingPermissions() -> Bool {
+        
+        var recordingPermissionAuthorized = false
+        
+        switch AVAudioSession.sharedInstance().recordPermission() {
+        case AVAudioSessionRecordPermission.granted:
+            recordingPermissionAuthorized = true
+        default:
+            recordingPermissionAuthorized = false
+            break
         }
+        
+        return recordingPermissionAuthorized
     }
     
-    func requestTranscribePermissions() {
-        SFSpeechRecognizer.requestAuthorization { [unowned self] authStatus in
-            DispatchQueue.main.async {
-                if authStatus == .authorized {
-                    self.authorizationComplete()
-                    print("PRINTING - GOT TRANSCRIBE PERMISSIONS")
-                } else {
-                    self.permissionsLabel.text = "Transcribe permission was declined; please enable it in settings then tap Continue again"
-                }
-            }
+    
+    func checkSiriPermissions() -> Bool {
+        let status = INPreferences.siriAuthorizationStatus().rawValue
+        
+        var siriPermissionAuthorized = false
+        
+        if status != 3 {
+            siriPermissionAuthorized = false
+            
+        } else {
+            siriPermissionAuthorized = true
         }
+        
+        return siriPermissionAuthorized
+        
     }
     
-    func authorizationComplete() {
-       self.permissionsView.isHidden = true
+    
+    func checkTranscribePermissions() -> Bool {
+        var transcribePermissionAuthorized = false
+        switch SFSpeechRecognizer.authorizationStatus() {
+        case .authorized:
+            transcribePermissionAuthorized = true
+        case .denied, .restricted, .notDetermined:
+            transcribePermissionAuthorized = false
+        }
+        
+        return transcribePermissionAuthorized
         
     }
     
     @IBAction func requestPermissions(_ sender: Any) {
         requestSiriPermissions()
+        
     }
     
+    // --- REQUEST PERMISSIONS ---
+  
+    func requestSiriPermissions() {
+        
+        if siriPermissionsAuthorized == false {
+            
+            INPreferences.requestSiriAuthorization { (status) in
+                print("PRINTING SIRI AUTH STATUS - STATUS: \(status)")
+                DispatchQueue.main.async {
+                    if status == .authorized {
+                        self.requestRecordPermissions()
+                        print("PRINTING - GOT SIRI PERMISSIONS")
+                    } else {
+                        self.permissionsLabel.text = "Siri permission declined; enable in settings."
+                    }
+                }
+                
+            }
+        } else {
+            
+            self.requestRecordPermissions()
+        }
+        
+    }
     
+    func requestRecordPermissions() {
+        
+        if recordingPermissionsAuthorized == false {
+            
+            AVAudioSession.sharedInstance().requestRecordPermission() { [unowned self] allowed in
+                DispatchQueue.main.async {
+                    if allowed {
+                        self.requestTranscribePermissions()
+                        print("PRINTING - GOT RECORDING PERMISSIONS")
+                    } else {
+                        self.permissionsLabel.text = "Recording permissions declined; enable them in settings."
+                    }
+                }
+            }
+        } else {
+            
+            self.requestTranscribePermissions()
+        }
+        
+    }
     
+    func requestTranscribePermissions() {
+        
+        if transcribePermissionsAuthorized == false {
+            
+            SFSpeechRecognizer.requestAuthorization { [unowned self] authStatus in
+                DispatchQueue.main.async {
+                    if authStatus == .authorized {
+                        self.authorizationComplete()
+                        print("PRINTING - GOT TRANSCRIBE PERMISSIONS")
+                    } else {
+                        self.permissionsLabel.text = "Transcribe permission declined; enable them in settings."
+                    }
+                }
+            }
+        } else {
+            
+            self.authorizationComplete()
+            
+        }
+        
+    }
+    
+    func authorizationComplete() {
+        self.permissionsView.isHidden = true
+        
+    }
     
     
 }

@@ -21,15 +21,6 @@
             <string>HelveticaNeue</string>
             <string>HelveticaNeue-Bold</string>
         </array>
-        <array key="Nunito-Bold.ttf">
-            <string>Nunito-Bold</string>
-        </array>
-        <array key="Nunito-Light.ttf">
-            <string>Nunito-Light</string>
-        </array>
-        <array key="Nunito-Regular.ttf">
-            <string>Nunito-Regular</string>
-        </array>
     </customFonts>
     <scenes>
         <!--ChannelVC-->
@@ -194,7 +185,7 @@
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Npy-n6-MP3">
                                 <rect key="frame" x="178" y="333" width="20" height="20"/>
-                                <color key="color" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIg-kK-kGa">
                                 <rect key="frame" x="62.5" y="377" width="250" height="30"/>
@@ -218,7 +209,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="83L-Y6-a0l"/>
                                         </constraints>
-                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" keyboardType="emailAddress"/>
                                     </textField>
@@ -231,7 +222,7 @@
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="CFp-mG-Joh">
                                         <rect key="frame" x="0.0" y="50.5" width="295" height="50"/>
-                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                     </textField>
@@ -332,7 +323,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="jaX-aH-dTN"/>
                                         </constraints>
-                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" keyboardType="emailAddress"/>
                                     </textField>
@@ -345,7 +336,7 @@
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Tx2-Ts-C0L">
                                         <rect key="frame" x="0.0" y="50.5" width="295" height="50"/>
-                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                     </textField>
@@ -367,7 +358,7 @@
                             </stackView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="VwP-kV-a8u">
                                 <rect key="frame" x="178" y="333.5" width="20" height="20"/>
-                                <color key="color" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfx-fG-o0z" customClass="RoundedButton" customModule="EvaVoiceCommands" customModuleProvider="target">
                                 <rect key="frame" x="40" y="315.5" width="295" height="55"/>
@@ -567,66 +558,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MW5-H8-vOq" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="77" width="0.0" height="590"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wvi-ds-CRk">
-                                        <rect key="frame" x="24" y="358" width="315" height="104"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image copy" translatesAutoresizingMaskIntoConstraints="NO" id="wDG-Sn-bNr">
-                                                <rect key="frame" x="0.0" y="0.0" width="95" height="95"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="95" id="4lN-ia-buN"/>
-                                                    <constraint firstAttribute="height" constant="95" id="79k-Ma-Nai"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="San Francisco -&gt; Richmond" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="iBS-85-L00">
-                                                <rect key="frame" x="0.0" y="5" width="204" height="24"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="24" id="vqe-5R-qjM"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Nunito-Regular" family="Nunito" pointSize="13"/>
-                                                <color key="textColor" red="0.12486190029999999" green="0.12486190029999999" blue="0.12486190029999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Move Sofa - I sold it" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="OcW-2i-473">
-                                                <rect key="frame" x="0.0" y="29" width="201" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20.670000000000002" id="YV8-lB-eoj"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Nunito-Bold" family="Nunito" pointSize="14"/>
-                                                <color key="textColor" red="0.12486190029999999" green="0.12486190029999999" blue="0.12486190029999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  $99        2 days      35 mi      X-Large Size" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="QQC-lb-frp">
-                                                <rect key="frame" x="0.0" y="82" width="208" height="13"/>
-                                                <fontDescription key="fontDescription" name="Nunito-Light" family="Nunito" pointSize="11"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="iBS-85-L00" secondAttribute="trailing" constant="14" id="GJT-eU-hkR"/>
-                                            <constraint firstItem="wDG-Sn-bNr" firstAttribute="top" secondItem="Wvi-ds-CRk" secondAttribute="top" id="GM7-zI-PYL"/>
-                                            <constraint firstAttribute="trailing" secondItem="OcW-2i-473" secondAttribute="trailing" constant="14" id="HhQ-th-uRN"/>
-                                            <constraint firstItem="OcW-2i-473" firstAttribute="top" secondItem="iBS-85-L00" secondAttribute="bottom" id="Ix0-sB-npe"/>
-                                            <constraint firstAttribute="bottom" secondItem="QQC-lb-frp" secondAttribute="bottom" constant="9" id="K7G-wb-Lpp"/>
-                                            <constraint firstItem="OcW-2i-473" firstAttribute="leading" secondItem="wDG-Sn-bNr" secondAttribute="trailing" constant="5" id="MDl-b8-yi2"/>
-                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="363" id="Q48-6R-vXZ"/>
-                                            <constraint firstItem="wDG-Sn-bNr" firstAttribute="leading" secondItem="Wvi-ds-CRk" secondAttribute="leading" id="Q4H-hV-GOc"/>
-                                            <constraint firstAttribute="trailing" secondItem="QQC-lb-frp" secondAttribute="trailing" constant="9" id="Se1-n6-QFx"/>
-                                            <constraint firstItem="QQC-lb-frp" firstAttribute="leading" secondItem="wDG-Sn-bNr" secondAttribute="trailing" constant="3" id="Um4-BE-gsJ"/>
-                                            <constraint firstItem="QQC-lb-frp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="OcW-2i-473" secondAttribute="bottom" constant="15" id="icF-Ri-MEd"/>
-                                            <constraint firstItem="iBS-85-L00" firstAttribute="leading" secondItem="wDG-Sn-bNr" secondAttribute="trailing" constant="2" id="ka0-Uf-1tz"/>
-                                            <constraint firstItem="iBS-85-L00" firstAttribute="top" secondItem="Wvi-ds-CRk" secondAttribute="top" constant="5" id="nc9-oe-wK8"/>
-                                            <constraint firstItem="wDG-Sn-bNr" firstAttribute="bottom" secondItem="QQC-lb-frp" secondAttribute="bottom" id="uYD-Yu-Pb6"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="Wvi-ds-CRk" firstAttribute="centerX" secondItem="MW5-H8-vOq" secondAttribute="centerX" id="83b-bc-0hq"/>
-                                    <constraint firstItem="Wvi-ds-CRk" firstAttribute="top" secondItem="MW5-H8-vOq" secondAttribute="top" constant="358" id="z1J-kS-usd"/>
-                                </constraints>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGf-dF-Y4n">
                                 <rect key="frame" x="0.0" y="258.5" width="0.0" height="150"/>
@@ -718,7 +650,6 @@
     </scenes>
     <resources>
         <image name="addChannelButton" width="22" height="22"/>
-        <image name="image copy" width="16" height="16"/>
         <image name="menuProfileIcon" width="99" height="99"/>
         <image name="smackBurger" width="40" height="40"/>
     </resources>
