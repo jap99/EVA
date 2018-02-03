@@ -45,6 +45,8 @@ class IntentHandler: INExtension, INRidesharingDomainHandling {
         // CREATE RIDE STATUS
         let status = INRideStatus()
         
+        // GET THE RIDE THAT WAS SELECTED
+        
         status.rideIdentifier = "abc123" // if it chances then Maps assumes ride was completed successfully or cancelled & updates UI
         status.pickupLocation = intent.pickupLocation // our resolve methods ensure we have a value
         status.dropOffLocation = intent.dropOffLocation // our resolve methods ensure we have a value\
@@ -258,18 +260,6 @@ class IntentHandler: INExtension, INRidesharingDomainHandling {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

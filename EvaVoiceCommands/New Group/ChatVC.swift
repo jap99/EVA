@@ -24,6 +24,7 @@ class ChatVC: BaseViewController, CLLocationManagerDelegate, GMSMapViewDelegate,
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var permissionsLabel: UILabel!
     @IBOutlet weak var permissionStackView: UIStackView!
+    @IBOutlet weak var permissionsView: UIView!
     
     var ref = DatabaseReference()
     
@@ -38,23 +39,195 @@ class ChatVC: BaseViewController, CLLocationManagerDelegate, GMSMapViewDelegate,
     @IBOutlet weak var goOnlineButton: UIButton!
     @IBOutlet weak var getAquoteStackView: UIStackView!
     @IBOutlet weak var googleMapsView: GMSMapView!
+    
     // For night time
     let kMapStyle = "[" +
         "  {" +
-        "    \"featureType\": \"poi.business\"," +
-        "    \"elementType\": \"all\"," +
+        "    \"featureType\": \"all\"," +
+        "    \"elementType\": \"geometry\"," +
         "    \"stylers\": [" +
         "      {" +
-        "        \"visibility\": \"on\"" +
+        "        \"color\": \"#242f3e\"" +
+        "      }" +
+        "    ]" +
+        "  }," +
+        "  {" +
+        "    \"featureType\": \"all\"," +
+        "    \"elementType\": \"labels.text.stroke\"," +
+        "    \"stylers\": [" +
+        "      {" +
+        "        \"lightness\": -80" +
+        "      }" +
+        "    ]" +
+        "  }," +
+        "  {" +
+        "    \"featureType\": \"administrative\"," +
+        "    \"elementType\": \"labels.text.fill\"," +
+        "    \"stylers\": [" +
+        "      {" +
+        "        \"color\": \"#746855\"" +
+        "      }" +
+        "    ]" +
+        "  }," +
+        "  {" +
+        "    \"featureType\": \"administrative.locality\"," +
+        "    \"elementType\": \"labels.text.fill\"," +
+        "    \"stylers\": [" +
+        "      {" +
+        "        \"color\": \"#d59563\"" +
+        "      }" +
+        "    ]" +
+        "  }," +
+        "  {" +
+        "    \"featureType\": \"poi\"," +
+        "    \"elementType\": \"labels.text.fill\"," +
+        "    \"stylers\": [" +
+        "      {" +
+        "        \"color\": \"#d59563\"" +
+        "      }" +
+        "    ]" +
+        "  }," +
+        "  {" +
+        "    \"featureType\": \"poi.park\"," +
+        "    \"elementType\": \"geometry\"," +
+        "    \"stylers\": [" +
+        "      {" +
+        "        \"color\": \"#263c3f\"" +
+        "      }" +
+        "    ]" +
+        "  }," +
+        "  {" +
+        "    \"featureType\": \"poi.park\"," +
+        "    \"elementType\": \"labels.text.fill\"," +
+        "    \"stylers\": [" +
+        "      {" +
+        "        \"color\": \"#6b9a76\"" +
+        "      }" +
+        "    ]" +
+        "  }," +
+        "  {" +
+        "    \"featureType\": \"road\"," +
+        "    \"elementType\": \"geometry.fill\"," +
+        "    \"stylers\": [" +
+        "      {" +
+        "        \"color\": \"#2b3544\"" +
+        "      }" +
+        "    ]" +
+        "  }," +
+        "  {" +
+        "    \"featureType\": \"road\"," +
+        "    \"elementType\": \"labels.text.fill\"," +
+        "    \"stylers\": [" +
+        "      {" +
+        "        \"color\": \"#9ca5b3\"" +
+        "      }" +
+        "    ]" +
+        "  }," +
+        "  {" +
+        "    \"featureType\": \"road.arterial\"," +
+        "    \"elementType\": \"geometry.fill\"," +
+        "    \"stylers\": [" +
+        "      {" +
+        "        \"color\": \"#38414e\"" +
+        "      }" +
+        "    ]" +
+        "  }," +
+        "  {" +
+        "    \"featureType\": \"road.arterial\"," +
+        "    \"elementType\": \"geometry.stroke\"," +
+        "    \"stylers\": [" +
+        "      {" +
+        "        \"color\": \"#212a37\"" +
+        "      }" +
+        "    ]" +
+        "  }," +
+        "  {" +
+        "    \"featureType\": \"road.highway\"," +
+        "    \"elementType\": \"geometry.fill\"," +
+        "    \"stylers\": [" +
+        "      {" +
+        "        \"color\": \"#746855\"" +
+        "      }" +
+        "    ]" +
+        "  }," +
+        "  {" +
+        "    \"featureType\": \"road.highway\"," +
+        "    \"elementType\": \"geometry.stroke\"," +
+        "    \"stylers\": [" +
+        "      {" +
+        "        \"color\": \"#1f2835\"" +
+        "      }" +
+        "    ]" +
+        "  }," +
+        "  {" +
+        "    \"featureType\": \"road.highway\"," +
+        "    \"elementType\": \"labels.text.fill\"," +
+        "    \"stylers\": [" +
+        "      {" +
+        "        \"color\": \"#f3d19c\"" +
+        "      }" +
+        "    ]" +
+        "  }," +
+        "  {" +
+        "    \"featureType\": \"road.local\"," +
+        "    \"elementType\": \"geometry.fill\"," +
+        "    \"stylers\": [" +
+        "      {" +
+        "        \"color\": \"#38414e\"" +
+        "      }" +
+        "    ]" +
+        "  }," +
+        "  {" +
+        "    \"featureType\": \"road.local\"," +
+        "    \"elementType\": \"geometry.stroke\"," +
+        "    \"stylers\": [" +
+        "      {" +
+        "        \"color\": \"#212a37\"" +
         "      }" +
         "    ]" +
         "  }," +
         "  {" +
         "    \"featureType\": \"transit\"," +
-        "    \"elementType\": \"labels.icon\"," +
+        "    \"elementType\": \"geometry\"," +
         "    \"stylers\": [" +
         "      {" +
-        "        \"visibility\": \"on\"" +
+        "        \"color\": \"#2f3948\"" +
+        "      }" +
+        "    ]" +
+        "  }," +
+        "  {" +
+        "    \"featureType\": \"transit.station\"," +
+        "    \"elementType\": \"labels.text.fill\"," +
+        "    \"stylers\": [" +
+        "      {" +
+        "        \"color\": \"#d59563\"" +
+        "      }" +
+        "    ]" +
+        "  }," +
+        "  {" +
+        "    \"featureType\": \"water\"," +
+        "    \"elementType\": \"geometry\"," +
+        "    \"stylers\": [" +
+        "      {" +
+        "        \"color\": \"#17263c\"" +
+        "      }" +
+        "    ]" +
+        "  }," +
+        "  {" +
+        "    \"featureType\": \"water\"," +
+        "    \"elementType\": \"labels.text.fill\"," +
+        "    \"stylers\": [" +
+        "      {" +
+        "        \"color\": \"#515c6d\"" +
+        "      }" +
+        "    ]" +
+        "  }," +
+        "  {" +
+        "    \"featureType\": \"water\"," +
+        "    \"elementType\": \"labels.text.stroke\"," +
+        "    \"stylers\": [" +
+        "      {" +
+        "        \"lightness\": -20" +
         "      }" +
         "    ]" +
         "  }" +
@@ -88,6 +261,7 @@ class ChatVC: BaseViewController, CLLocationManagerDelegate, GMSMapViewDelegate,
 //      self.updateMap()
  
         UIApplication.shared.statusBarStyle = .lightContent
+        self.permissionsView.layer.cornerRadius = 6.0
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -117,9 +291,18 @@ class ChatVC: BaseViewController, CLLocationManagerDelegate, GMSMapViewDelegate,
         self.locationManager.delegate = self
         self.locationManager.requestWhenInUseAuthorization()
         self.googleMapsView.delegate = self
+        self.googleMapsView.mapType = GMSMapViewType.normal
         updateLocation(running: true)
         //annotationDetails.isHidden = true
-       
+        
+        do {
+            googleMapsView.mapStyle = try GMSMapStyle(jsonString: kMapStyle)
+        } catch {
+            print("PRINTING - ONE OR MORE MAP STYLES FAILED TO LOAD. \(error)")
+        }
+        
+        //self.view = googleMapsView
+        
     }
     
     func setupKeychainWrapper() {
@@ -429,25 +612,7 @@ class ChatVC: BaseViewController, CLLocationManagerDelegate, GMSMapViewDelegate,
 //
 //
     
-    func updateLocation(running: Bool) {
-        
-        let status = CLLocationManager.authorizationStatus()
-        
-        if running {
-            if (CLAuthorizationStatus.authorizedWhenInUse == status) {
-                locationManager.startUpdatingLocation()
-                
-                googleMapsView.isMyLocationEnabled = true
-            }
-            
-        } else {
-            
-            locationManager.stopUpdatingLocation()
-            googleMapsView.settings.myLocationButton = false
-            googleMapsView.isMyLocationEnabled = false
-        }
-    }
-    
+
     
     
 //    @IBAction func goOnline(_ sender: Any) {
@@ -509,6 +674,44 @@ class ChatVC: BaseViewController, CLLocationManagerDelegate, GMSMapViewDelegate,
 //    }
 //
     
+    // MARK: ADDRESS SEARCH
+    
+    
+    @IBAction func addressAutoComplete(_ sender: AnyObject) {
+        //        let searchController = UISearchController(searchResultsController: searchResultsController)
+        //        searchController.searchBar.delegate = self
+        //        self.present(searchController, animated: true, completion: nil)
+        
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.resultsArray.removeAll()
+        gmsFetcher?.sourceTextHasChanged(searchText)
+    }
+    
+    
+    
+    
+    // MARK: MAP FUNCTIONS
+    func updateLocation(running: Bool) {
+        
+        let status = CLLocationManager.authorizationStatus()
+        
+        if running {
+            if (CLAuthorizationStatus.authorizedWhenInUse == status) {
+                locationManager.startUpdatingLocation()
+                
+                googleMapsView.isMyLocationEnabled = true
+            }
+            
+        } else {
+            
+            locationManager.stopUpdatingLocation()
+            googleMapsView.settings.myLocationButton = false
+            googleMapsView.isMyLocationEnabled = false
+        }
+    }
+    
     
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -519,14 +722,6 @@ class ChatVC: BaseViewController, CLLocationManagerDelegate, GMSMapViewDelegate,
             self.googleMapsView.camera = GMSCameraPosition.camera(withTarget: userLocation.coordinate, zoom: 10.0)
 
             self.loc = CLLocation(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
-            
-//            do {
-//                googleMapsView.mapStyle = try GMSMapStyle(jsonString: kMapStyle)
-//            } catch {
-//                print("PRINTING - ONE OR MORE MAP STYLES FAILED TO LOAD. \(error)")
-//            }
-//
-//            self.view = googleMapsView
 
             updateMap()
         }
@@ -539,13 +734,7 @@ class ChatVC: BaseViewController, CLLocationManagerDelegate, GMSMapViewDelegate,
     }
     
     
-    
-    @IBAction func addressAutoComplete(_ sender: AnyObject) {
-        //        let searchController = UISearchController(searchResultsController: searchResultsController)
-        //        searchController.searchBar.delegate = self
-        //        self.present(searchController, animated: true, completion: nil)
-        
-    }
+  
     
     func findLocationWithCoordinates(longitude: Double, latitude: Double, title: String) {
         
@@ -563,12 +752,7 @@ class ChatVC: BaseViewController, CLLocationManagerDelegate, GMSMapViewDelegate,
     }
     
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        self.resultsArray.removeAll()
-        gmsFetcher?.sourceTextHasChanged(searchText)
-    }
-    
-    
+
     
     
 //    func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
@@ -660,8 +844,8 @@ class ChatVC: BaseViewController, CLLocationManagerDelegate, GMSMapViewDelegate,
     }
     
     func authorizationComplete() {
-       
-        self.permissionStackView.isHidden = true
+       self.permissionsView.isHidden = true
+        
     }
     
     @IBAction func requestPermissions(_ sender: Any) {
