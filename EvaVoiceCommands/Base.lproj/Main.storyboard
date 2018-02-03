@@ -530,10 +530,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vyW-ZB-pNt">
-                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="77"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDh-iU-mJt">
-                                        <rect key="frame" x="0.0" y="47" width="24" height="18"/>
+                                        <rect key="frame" x="12" y="47" width="24" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="ZeS-g6-v1I"/>
                                             <constraint firstAttribute="height" constant="18" id="sGa-Ec-ARV"/>
@@ -541,7 +541,7 @@
                                         <state key="normal" image="smackBurger"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EVA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yj8-hQ-y5j">
-                                        <rect key="frame" x="0.0" y="42.5" width="39" height="27.5"/>
+                                        <rect key="frame" x="168" y="42.5" width="39" height="27.5"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                         <color key="textColor" red="0.99937439939999995" green="0.99360014799999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -557,24 +557,24 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MW5-H8-vOq" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="77" width="0.0" height="590"/>
+                                <rect key="frame" x="0.0" y="77" width="375" height="590"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </view>
                             <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGf-dF-Y4n">
-                                <rect key="frame" x="0.0" y="258.5" width="0.0" height="150"/>
+                                <rect key="frame" x="50" y="258.5" width="275" height="150"/>
                                 <subviews>
                                     <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QtV-db-icM">
-                                        <rect key="frame" x="0.0" y="11" width="0.0" height="130"/>
+                                        <rect key="frame" x="19" y="11" width="237" height="130"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6t-6v-jWA">
-                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="90"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="237" height="90"/>
                                                 <string key="text">Access to Siri and voice transcribing is needed for voice booking functionality. Press the continue button below to grant access.</string>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                 <color key="textColor" red="0.99937439939999995" green="0.99360014799999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoP-Zk-k21">
-                                                <rect key="frame" x="0.0" y="90" width="0.0" height="40"/>
+                                                <rect key="frame" x="0.0" y="90" width="237" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="PR5-kM-TA1"/>
                                                 </constraints>

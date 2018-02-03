@@ -24,6 +24,7 @@
 		9F6984AD20198CA800215753 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F6984AB20198CA800215753 /* MainInterface.storyboard */; };
 		9F6984B120198CA800215753 /* EvaVoiceCommands-IntentsUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9F6984A420198CA800215753 /* EvaVoiceCommands-IntentsUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9F6984B420198CA800215753 /* EvaVoiceCommands-Intents.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9F69849B20198CA800215753 /* EvaVoiceCommands-Intents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9F6DCA1420263CD900411478 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9F6DCA1320263CD900411478 /* GoogleMaps.bundle */; };
 		9FE34BC1201E48C500B8B1BA /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE34BC2201E48C500B8B1BA /* Alamofire.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		9FE34BC8201E4AB500B8B1BA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE34BC6201E4AB500B8B1BA /* SWRevealViewController.m */; };
 		9FE34BCD201E4FA500B8B1BA /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE34BCC201E4FA500B8B1BA /* ChatVC.swift */; };
@@ -116,6 +117,7 @@
 		9F6984AE20198CA800215753 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F6984BC2019939E00215753 /* EvaVoiceCommands-IntentsUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "EvaVoiceCommands-IntentsUI.entitlements"; sourceTree = "<group>"; };
 		9F6984BD201993B800215753 /* EvaVoiceCommands-Intents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "EvaVoiceCommands-Intents.entitlements"; sourceTree = "<group>"; };
+		9F6DCA1320263CD900411478 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleMaps.bundle; sourceTree = "<group>"; };
 		9FE34BC2201E48C500B8B1BA /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FE34BC5201E4AB400B8B1BA /* EvaVoiceCommands-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EvaVoiceCommands-Bridging-Header.h"; sourceTree = "<group>"; };
 		9FE34BC6201E4AB500B8B1BA /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 		9F69847820198B6D00215753 = {
 			isa = PBXGroup;
 			children = (
+				9F6DCA1320263CD900411478 /* GoogleMaps.bundle */,
 				9F20D8A32021182B00AF0551 /* GoogleMaps.framework */,
 				9F69848320198B6D00215753 /* EvaVoiceCommands */,
 				9F69849C20198CA800215753 /* EvaVoiceCommands-Intents */,
@@ -525,6 +528,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F6DCA1420263CD900411478 /* GoogleMaps.bundle in Resources */,
 				9F20D8A52021195A00AF0551 /* GoogleMaps.framework in Resources */,
 				9F69848F20198B6D00215753 /* LaunchScreen.storyboard in Resources */,
 				9F69848C20198B6D00215753 /* Assets.xcassets in Resources */,
@@ -1021,8 +1025,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cleandev.EvaVoiceCommands.EvaVoiceCommands-Intents";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "23b90a42-5042-4937-851c-258593e312a2";
-				PROVISIONING_PROFILE_SPECIFIER = "EvaVoiceCommandsIntents-DEV";
+				PROVISIONING_PROFILE = "04eb80bc-7608-4ccb-8cb3-78035027f527";
+				PROVISIONING_PROFILE_SPECIFIER = "EvaVoiceCommands-DEV-Intents";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
