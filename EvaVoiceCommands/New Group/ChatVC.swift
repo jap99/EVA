@@ -265,7 +265,6 @@ class ChatVC: BaseViewController, CLLocationManagerDelegate, GMSMapViewDelegate,
  
         UIApplication.shared.statusBarStyle = .lightContent
         self.permissionsView.layer.cornerRadius = 6.0
-        self.permissionsView.isHidden = true
         
         self.callPermissionFunctions {
             self.checkAllPermissions()
@@ -299,7 +298,7 @@ class ChatVC: BaseViewController, CLLocationManagerDelegate, GMSMapViewDelegate,
         ref = Database.database().reference()
         geoFire = GeoFire(firebaseRef: DataService.instance.mainRef.child("order-locations"))
         self.locationManager.delegate = self
-        self.locationManager.requestWhenInUseAuthorization()
+        
         self.googleMapsView.delegate = self
         self.googleMapsView.mapType = GMSMapViewType.normal
         updateLocation(running: true)
@@ -816,6 +815,7 @@ class ChatVC: BaseViewController, CLLocationManagerDelegate, GMSMapViewDelegate,
         recordingPermissionsAuthorized = checkRecordingPermissions()
         siriPermissionsAuthorized = checkSiriPermissions()
         transcribePermissionsAuthorized = checkTranscribePermissions()
+        closure()
     }
     
     
@@ -838,6 +838,7 @@ class ChatVC: BaseViewController, CLLocationManagerDelegate, GMSMapViewDelegate,
         
         switch AVAudioSession.sharedInstance().recordPermission() {
         case AVAudioSessionRecordPermission.granted:
+            
             recordingPermissionAuthorized = true
         default:
             recordingPermissionAuthorized = false
@@ -858,6 +859,7 @@ class ChatVC: BaseViewController, CLLocationManagerDelegate, GMSMapViewDelegate,
             
         } else {
             siriPermissionAuthorized = true
+            
         }
         
         return siriPermissionAuthorized
@@ -870,6 +872,7 @@ class ChatVC: BaseViewController, CLLocationManagerDelegate, GMSMapViewDelegate,
         switch SFSpeechRecognizer.authorizationStatus() {
         case .authorized:
             transcribePermissionAuthorized = true
+            
         case .denied, .restricted, .notDetermined:
             transcribePermissionAuthorized = false
         }
@@ -886,7 +889,7 @@ class ChatVC: BaseViewController, CLLocationManagerDelegate, GMSMapViewDelegate,
     // --- REQUEST PERMISSIONS ---
   
     func requestSiriPermissions() {
-        
+        self.permissionsView.isHidden = true
         if siriPermissionsAuthorized == false {
             
             INPreferences.requestSiriAuthorization { (status) in
@@ -952,7 +955,7 @@ class ChatVC: BaseViewController, CLLocationManagerDelegate, GMSMapViewDelegate,
     }
     
     func authorizationComplete() {
-        self.permissionsView.isHidden = true
+        self.locationManager.requestWhenInUseAuthorization()
         
     }
     
